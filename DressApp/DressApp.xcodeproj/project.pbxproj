@@ -35,6 +35,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B7DCD791FD997110024F2B8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7B7DCD7A1FD997110024F2B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7B7DCD7B1FD997110024F2B8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7B7DCD7C1FD997110024F2B8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		7B8DA5651FD98C54003E9785 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +82,10 @@
 		7B8DA5701FD98C54003E9785 /* DressApp */ = {
 			isa = PBXGroup;
 			children = (
+				7B7DCD791FD997110024F2B8 /* Storyboards */,
+				7B7DCD7B1FD997110024F2B8 /* Utility */,
+				7B7DCD7C1FD997110024F2B8 /* ViewController */,
+				7B7DCD7A1FD997110024F2B8 /* Views */,
 				7B8DA5711FD98C54003E9785 /* AppDelegate.swift */,
 				7B8DA5731FD98C54003E9785 /* ViewController.swift */,
 				7B8DA5751FD98C54003E9785 /* Main.storyboard */,
