@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C25722D1FE14D03007916DB /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C25722C1FE14D03007916DB /* Me.storyboard */; };
+		5C2572311FE14D7A007916DB /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2572301FE14D7A007916DB /* Today.storyboard */; };
 		7B1EA01B1FDFFBFB0088443D /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EA01A1FDFFBFB0088443D /* Clothes.swift */; };
 		7B1EA01D1FDFFC660088443D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EA01C1FDFFC660088443D /* Color.swift */; };
 		7B1EA01F1FE01A0E0088443D /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EA01E1FE01A0E0088443D /* Material.swift */; };
 		7B1EA0211FE02CF70088443D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EA0201FE02CF70088443D /* Global.swift */; };
 		7B1EA0231FE037660088443D /* Wardrobe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1EA0221FE037660088443D /* Wardrobe.storyboard */; };
 		7B1EA0251FE037EE0088443D /* WardrobeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EA0241FE037EE0088443D /* WardrobeTableViewController.swift */; };
-		7B1EA0291FE0382A0088443D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1EA0281FE0382A0088443D /* Storyboard.storyboard */; };
 		7B8DA5721FD98C54003E9785 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DA5711FD98C54003E9785 /* AppDelegate.swift */; };
-		7B8DA5741FD98C54003E9785 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DA5731FD98C54003E9785 /* ViewController.swift */; };
 		7B8DA5771FD98C54003E9785 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA5751FD98C54003E9785 /* Main.storyboard */; };
 		7B8DA5791FD98C54003E9785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA5781FD98C54003E9785 /* Assets.xcassets */; };
 		7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA57A1FD98C54003E9785 /* LaunchScreen.storyboard */; };
@@ -24,16 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C25722C1FE14D03007916DB /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		5C2572301FE14D7A007916DB /* Today.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
 		7B1EA01A1FDFFBFB0088443D /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		7B1EA01C1FDFFC660088443D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7B1EA01E1FE01A0E0088443D /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		7B1EA0201FE02CF70088443D /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		7B1EA0221FE037660088443D /* Wardrobe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wardrobe.storyboard; sourceTree = "<group>"; };
 		7B1EA0241FE037EE0088443D /* WardrobeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTableViewController.swift; sourceTree = "<group>"; };
-		7B1EA0281FE0382A0088443D /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		7B8DA56E1FD98C54003E9785 /* DressApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8DA5711FD98C54003E9785 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B8DA5731FD98C54003E9785 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B8DA5761FD98C54003E9785 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B8DA5781FD98C54003E9785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B8DA57B1FD98C54003E9785 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				7B1EA0221FE037660088443D /* Wardrobe.storyboard */,
-				7B1EA0281FE0382A0088443D /* Storyboard.storyboard */,
+				5C25722C1FE14D03007916DB /* Me.storyboard */,
+				5C2572301FE14D7A007916DB /* Today.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -122,7 +123,6 @@
 				7B7DCD7A1FD997110024F2B8 /* Views */,
 				7B8DA5711FD98C54003E9785 /* AppDelegate.swift */,
 				E04187B41FE13989007E5E83 /* Weather.swift */,
-				7B8DA5731FD98C54003E9785 /* ViewController.swift */,
 				7B8DA5751FD98C54003E9785 /* Main.storyboard */,
 				7B8DA5781FD98C54003E9785 /* Assets.xcassets */,
 				7B8DA57A1FD98C54003E9785 /* LaunchScreen.storyboard */,
@@ -190,11 +190,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2572311FE14D7A007916DB /* Today.storyboard in Resources */,
 				7B1EA0231FE037660088443D /* Wardrobe.storyboard in Resources */,
 				7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */,
+				5C25722D1FE14D03007916DB /* Me.storyboard in Resources */,
 				7B8DA5791FD98C54003E9785 /* Assets.xcassets in Resources */,
 				7B8DA5771FD98C54003E9785 /* Main.storyboard in Resources */,
-				7B1EA0291FE0382A0088443D /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +208,6 @@
 			files = (
 				E04187B51FE13989007E5E83 /* Weather.swift in Sources */,
 				7B1EA01F1FE01A0E0088443D /* Material.swift in Sources */,
-				7B8DA5741FD98C54003E9785 /* ViewController.swift in Sources */,
 				7B1EA0211FE02CF70088443D /* Global.swift in Sources */,
 				7B1EA01B1FDFFBFB0088443D /* Clothes.swift in Sources */,
 				7B1EA0251FE037EE0088443D /* WardrobeTableViewController.swift in Sources */,
