@@ -20,7 +20,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-*.pbxproj
+
 
 ## Other
 *.moved-aside
