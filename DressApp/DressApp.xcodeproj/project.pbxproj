@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C25722D1FE14D03007916DB /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C25722C1FE14D03007916DB /* Me.storyboard */; };
-		5C2572311FE14D7A007916DB /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2572301FE14D7A007916DB /* Today.storyboard */; };
-		7B1EA0231FE037660088443D /* Wardrobe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1EA0221FE037660088443D /* Wardrobe.storyboard */; };
+		5C45744F1FE26C8D00FC2A55 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C45744E1FE26C8D00FC2A55 /* Today.storyboard */; };
+		5C4574511FE26CA800FC2A55 /* Wardrobe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */; };
+		5C4574551FE26D1400FC2A55 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4574541FE26D1400FC2A55 /* Me.storyboard */; };
 		7B1EA0251FE037EE0088443D /* WardrobeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1EA0241FE037EE0088443D /* WardrobeTableViewController.swift */; };
 		7B31D5AA1FE15F780038DA6E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A51FE15F780038DA6E /* Global.swift */; };
 		7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A61FE15F780038DA6E /* Wardrobe.swift */; };
@@ -25,9 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C25722C1FE14D03007916DB /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
-		5C2572301FE14D7A007916DB /* Today.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
-		7B1EA0221FE037660088443D /* Wardrobe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wardrobe.storyboard; sourceTree = "<group>"; };
+		5C45744E1FE26C8D00FC2A55 /* Today.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
+		5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wardrobe.storyboard; sourceTree = "<group>"; };
+		5C4574541FE26D1400FC2A55 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		7B1EA0241FE037EE0088443D /* WardrobeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTableViewController.swift; sourceTree = "<group>"; };
 		7B31D5A51FE15F780038DA6E /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		7B31D5A61FE15F780038DA6E /* Wardrobe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wardrobe.swift; sourceTree = "<group>"; };
@@ -71,9 +71,9 @@
 		7B7DCD791FD997110024F2B8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7B1EA0221FE037660088443D /* Wardrobe.storyboard */,
-				5C25722C1FE14D03007916DB /* Me.storyboard */,
-				5C2572301FE14D7A007916DB /* Today.storyboard */,
+				5C4574541FE26D1400FC2A55 /* Me.storyboard */,
+				5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */,
+				5C45744E1FE26C8D00FC2A55 /* Today.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -194,10 +194,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C2572311FE14D7A007916DB /* Today.storyboard in Resources */,
-				7B1EA0231FE037660088443D /* Wardrobe.storyboard in Resources */,
+				5C45744F1FE26C8D00FC2A55 /* Today.storyboard in Resources */,
+				5C4574511FE26CA800FC2A55 /* Wardrobe.storyboard in Resources */,
+				5C4574551FE26D1400FC2A55 /* Me.storyboard in Resources */,
 				7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */,
-				5C25722D1FE14D03007916DB /* Me.storyboard in Resources */,
 				7B8DA5791FD98C54003E9785 /* Assets.xcassets in Resources */,
 				7B8DA5771FD98C54003E9785 /* Main.storyboard in Resources */,
 			);
