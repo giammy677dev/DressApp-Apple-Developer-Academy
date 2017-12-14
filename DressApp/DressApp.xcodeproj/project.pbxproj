@@ -77,9 +77,9 @@
 		7B7DCD791FD997110024F2B8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7B1EA0221FE037660088443D /* Wardrobe.storyboard */,
-				5C25722C1FE14D03007916DB /* Me.storyboard */,
-				5C2572301FE14D7A007916DB /* Today.storyboard */,
+				5C4574541FE26D1400FC2A55 /* Me.storyboard */,
+				5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */,
+				5C45744E1FE26C8D00FC2A55 /* Today.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -184,10 +184,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C2572311FE14D7A007916DB /* Today.storyboard in Resources */,
-				7B1EA0231FE037660088443D /* Wardrobe.storyboard in Resources */,
+				5C45744F1FE26C8D00FC2A55 /* Today.storyboard in Resources */,
+				5C4574511FE26CA800FC2A55 /* Wardrobe.storyboard in Resources */,
+				5C4574551FE26D1400FC2A55 /* Me.storyboard in Resources */,
 				7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */,
-				5C25722D1FE14D03007916DB /* Me.storyboard in Resources */,
 				7B8DA5791FD98C54003E9785 /* Assets.xcassets in Resources */,
 				7B8DA5771FD98C54003E9785 /* Main.storyboard in Resources */,
 			);
