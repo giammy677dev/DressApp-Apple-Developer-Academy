@@ -2,7 +2,7 @@
 //  WardrobeTableViewController.swift
 //  DressApp
 //
-//  Created by Stefano Formicola on 12/12/2017.
+//  Created by Gian Marco Orlando on 14/12/17.
 //  Copyright © 2017 Checkmate Team. All rights reserved.
 //
 
@@ -10,14 +10,8 @@ import UIKit
 
 class WardrobeTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    override func loadView() {
+            super.loadView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,35 +19,70 @@ class WardrobeTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 77
-    }
-    
-    
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-//
-//    
-    /*
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+
+        //        switch (genre) {
+        //        case "male":
+        return 6
+        //        case "female":
+//        return 7
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Your wardrobe"
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "prototypeCell", for: indexPath)
 
         // Configure the cell...
-
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = "T-shirts"
+            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.detailTextLabel?.text = "Prova"
+        case 1:
+            cell.textLabel?.text = "Shirts"
+            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.detailTextLabel?.text = "Prova"
+        case 2:
+            cell.textLabel?.text = "Sweaters"
+            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.detailTextLabel?.text = "Prova"
+        case 3:
+            cell.textLabel?.text = "Dresses"
+            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.detailTextLabel?.text = "Prova"
+        case 4:
+            cell.textLabel?.text = "Trousers"
+            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.detailTextLabel?.text = "Prova"
+        case 5:
+            cell.textLabel?.text = "Shoes"
+            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.detailTextLabel?.text = "Prova"
+        case 6:
+            cell.textLabel?.text = "Skirts"
+            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.detailTextLabel?.text = "Prova"
+        default:
+            cell.textLabel?.text = "Error! No category found!"
+        }
+        
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 
     /*
     // Override to support conditional editing of the table view.
