@@ -10,7 +10,7 @@ import Foundation
 
 class Wardrobe {
     
-    static let shared = Wardrobe()
+    static let shared = Wardrobe()  //Wardrobe singleton used in Wardrobe section (see Storyboard)
     
     private init() {}
     
@@ -22,7 +22,6 @@ class Wardrobe {
     private var shoes: [Shoes] = []
     private var dresses: [Dress] = []
     
-
     
     func add<C: Cloth>(cloth: C) {
         /*
@@ -75,6 +74,8 @@ class Wardrobe {
     func getDresses() -> [Dress] {
         return dresses
     }
+    
+    
     
     
 }
