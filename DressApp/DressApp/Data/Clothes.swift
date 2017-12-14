@@ -10,17 +10,19 @@ import Foundation
 
 class Cloth {
     
+    let category: ClothCategory
     let color: Color
     let material: Material
     var description: String?
-    let isElegant: Bool
+    var isElegant: Bool
     
-    init(color: Color, material: Material, description: String?, elegant: Bool) {
+    init(color: Color, material: Material, description: String?, elegant: Bool, category: ClothCategory) {
         self.color = color
         self.material = material
         self.description = description
+        self.category = category
         isElegant = elegant
-        Wardrobe.shared.add(self)
+        Wardrobe.shared.add(cloth: self)
     }
     
     var matchedTrousers: [Trousers]?
@@ -30,7 +32,6 @@ class Cloth {
     var matchedSkirts: [Skirt]?
     var matchedShoes: [Shoes]?
     var matchedDresses: [Dress]?
-    
     
     
 }
@@ -43,7 +44,7 @@ class Trousers: Cloth {
     
     init(color: Color, material: Material, description: String?, elegant: Bool, model: Model) {
         self.model = model
-        super.init(color: color, material: material, description: description, elegant: elegant)
+        super.init(color: color, material: material, description: description, elegant: elegant, category: .trousers)
     }
     
 }
@@ -51,10 +52,9 @@ class Trousers: Cloth {
 class TShirt: Cloth {
     
     let sleeves: Model
-    
     init(color: Color, material: Material, description: String?, elegant: Bool, model: Model) {
         self.sleeves = model
-        super.init(color: color, material: material, description: description, elegant: elegant)
+        super.init(color: color, material: material, description: description, elegant: elegant, category: .tShirt)
     }
     
 }
@@ -65,7 +65,7 @@ class Shirt: Cloth {
     
     init(color: Color, material: Material, description: String?, elegant: Bool, model: Model) {
         self.model = model
-        super.init(color: color, material: material, description: description, elegant: elegant)
+        super.init(color: color, material: material, description: description, elegant: elegant, category: .shirt)
     }
     
 }
@@ -76,7 +76,7 @@ class Sweater: Cloth {
     
     init(color: Color, material: Material, description: String?, elegant: Bool, model: SweaterModels) {
         self.model = model
-        super.init(color: color, material: material, description: description, elegant: elegant)
+        super.init(color: color, material: material, description: description, elegant: elegant, category: .sweater)
     }
     
 }
