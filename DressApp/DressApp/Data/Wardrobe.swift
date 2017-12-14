@@ -22,15 +22,7 @@ class Wardrobe {
     private var shoes: [Shoes] = []
     private var dresses: [Dress] = []
     
-    var categories = ["Trousers" : [Trousers](),
-                      "T-Shirts" : [TShirt](),
-                      "Shirts" : [Shirt](),
-                      "Sweaters" : [Sweater](),
-                      "Skirts" : [Skirt](),
-                      "Shoes" : [Shoes](),
-                      "Dresses" : [Dress]()
-    ] as [String : Array<Cloth>]
-    
+
     
     func add<C: Cloth>(cloth: C) {
         /*
@@ -39,9 +31,7 @@ class Wardrobe {
         switch cloth.category {
             
             case .trousers:
-                categories["Trousers"]?.append(cloth)
-            
-//                trousers.append(cloth as! Trousers)
+                trousers.append(cloth as! Trousers)
             case .tShirt:
                 tShirts.append(cloth as! TShirt)
             case .shirt:
@@ -56,7 +46,35 @@ class Wardrobe {
                 dresses.append(cloth as! Dress)
 
         }
-        
     }
+    
+    func getTrousers() -> [Trousers] {
+        return trousers
+    }
+    
+    func getTShirts() -> [TShirt] {
+        return tShirts
+    }
+    
+    func getShirts() -> [Shirt] {
+        return shirts
+    }
+    
+    func getSweaters() -> [Sweater] {
+        return sweaters
+    }
+    
+    func getSkirts() -> [Skirt] {
+        return skirts
+    }
+    
+    func getShoes() -> [Shoes] {
+        return shoes
+    }
+
+    func getDresses() -> [Dress] {
+        return dresses
+    }
+    
     
 }
