@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 enum ClothCategory {
     
     case trousers
@@ -17,7 +18,6 @@ enum ClothCategory {
     case skirt
     case shoes
     case dress
-    
     
 }
 

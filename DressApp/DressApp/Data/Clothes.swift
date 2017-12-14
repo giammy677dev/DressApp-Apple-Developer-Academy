@@ -15,6 +15,7 @@ class Cloth {
     let material: Material
     var description: String?
     var isElegant: Bool
+    var lastTimeUsed: Date?
     
     init(color: Color, material: Material, description: String?, elegant: Bool, category: ClothCategory) {
         self.color = color
@@ -32,7 +33,6 @@ class Cloth {
     var matchedSkirts: [Skirt]?
     var matchedShoes: [Shoes]?
     var matchedDresses: [Dress]?
-    
     
 }
 
