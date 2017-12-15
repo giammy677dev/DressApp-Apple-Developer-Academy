@@ -15,6 +15,8 @@
 		7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A61FE15F780038DA6E /* Wardrobe.swift */; };
 		7B31D5AC1FE15F780038DA6E /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A71FE15F780038DA6E /* Clothes.swift */; };
 		7B31D5AD1FE15F780038DA6E /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A81FE15F780038DA6E /* Enumerations.swift */; };
+		7B502EC01FE43AB000C8D198 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B502EBE1FE43AB000C8D198 /* MeTableViewController.swift */; };
+		7B502EC11FE43AB000C8D198 /* WardrobeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B502EBF1FE43AB000C8D198 /* WardrobeNavigationViewController.swift */; };
 		7B81F9E51FE2A4B900C29D53 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81F9E31FE2A4B900C29D53 /* User.swift */; };
 		7B81F9E61FE2A4B900C29D53 /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81F9E41FE2A4B900C29D53 /* Outfit.swift */; };
 		7B8DA5721FD98C54003E9785 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DA5711FD98C54003E9785 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 		7B31D5A61FE15F780038DA6E /* Wardrobe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wardrobe.swift; sourceTree = "<group>"; };
 		7B31D5A71FE15F780038DA6E /* Clothes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		7B31D5A81FE15F780038DA6E /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		7B502EBE1FE43AB000C8D198 /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
+		7B502EBF1FE43AB000C8D198 /* WardrobeNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeNavigationViewController.swift; sourceTree = "<group>"; };
 		7B81F9E31FE2A4B900C29D53 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7B81F9E41FE2A4B900C29D53 /* Outfit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
 		7B8DA56E1FD98C54003E9785 /* DressApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +93,14 @@
 			path = ../../../DressApp/DressApp/DressApp/Data;
 			sourceTree = "<group>";
 		};
+		7B502EBD1FE43A9900C8D198 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B19D7A3C1FE428F100A42AD4 /* MeTableViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		7B7DCD791FD997110024F2B8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,8 @@
 		7B7DCD7C1FD997110024F2B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7B502EBE1FE43AB000C8D198 /* MeTableViewController.swift */,
+				7B502EBF1FE43AB000C8D198 /* WardrobeNavigationViewController.swift */,
 				B13097D51FE280460095C750 /* WardrobeTableViewController.swift */,
 				5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */,
 				5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */,
@@ -115,6 +129,7 @@
 			children = (
 				7B8DA5701FD98C54003E9785 /* DressApp */,
 				7B8DA56F1FD98C54003E9785 /* Products */,
+				7B502EBD1FE43A9900C8D198 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,6 +235,7 @@
 			files = (
 				E04187B51FE13989007E5E83 /* Weather.swift in Sources */,
 				7B31D5AC1FE15F780038DA6E /* Clothes.swift in Sources */,
+				7B502EC11FE43AB000C8D198 /* WardrobeNavigationViewController.swift in Sources */,
 				7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */,
 				7B8DA5721FD98C54003E9785 /* AppDelegate.swift in Sources */,
 				7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */,
@@ -227,6 +243,7 @@
 				7B81F9E61FE2A4B900C29D53 /* Outfit.swift in Sources */,
 				5C69B0141FE434120006C2E6 /* WardrobeCollectionViewCell.swift in Sources */,
 				5C69B0121FE3CA570006C2E6 /* WardrobeCollectionViewController.swift in Sources */,
+				7B502EC01FE43AB000C8D198 /* MeTableViewController.swift in Sources */,
 				B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */,
 				E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */,
 				7B31D5AD1FE15F780038DA6E /* Enumerations.swift in Sources */,
