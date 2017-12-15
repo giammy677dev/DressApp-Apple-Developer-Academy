@@ -15,7 +15,7 @@ class User {
     var genre: UserGenre?
     var bodyShape: BodyShape?
     var dateOfBirth: Date?
-    var age: Int {
+    var age: Int {  // Computed property
         let today = Date()
         let gregorian = NSCalendar(identifier: NSCalendar.Identifier.gregorian)
         let ageComponents = gregorian?.components([.month, .day, .year], from: dateOfBirth!, to: today, options:[])
@@ -25,6 +25,12 @@ class User {
     var firstName: String?
     var secondName: String?
     
+    /*
+     As a singleton class, the init method is private and all properties of the singleton are optionals and set to nil.
+     
+     setUserInfo should be called at the first launch of the application to set all User's properties and in the Settings page
+     to edit them.
+     */
     
     private init() {}
     
