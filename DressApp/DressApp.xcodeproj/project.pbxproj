@@ -25,8 +25,8 @@
 		7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA57A1FD98C54003E9785 /* LaunchScreen.storyboard */; };
 		7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */; };
 		B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13097D51FE280460095C750 /* WardrobeTableViewController.swift */; };
-		B19D7A3D1FE428F100A42AD4 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19D7A3C1FE428F100A42AD4 /* MeTableViewController.swift */; };
 		B1B1536B1FE3C80A00558A45 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */; };
+		B1EF195C1FE467190044D072 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF195B1FE467190044D072 /* SettingsTableViewController.swift */; };
 		E04187B51FE13989007E5E83 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B41FE13989007E5E83 /* Weather.swift */; };
 		E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B61FE13A85007E5E83 /* Geolocation.swift */; };
 /* End PBXBuildFile section */
@@ -52,8 +52,8 @@
 		7B8DA57D1FD98C54003E9785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AvatarImageContext.swift; path = DressApp/Utility/AvatarImageContext.swift; sourceTree = SOURCE_ROOT; };
 		B13097D51FE280460095C750 /* WardrobeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTableViewController.swift; sourceTree = "<group>"; };
-		B19D7A3C1FE428F100A42AD4 /* MeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
+		B1EF195B1FE467190044D072 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E04187B41FE13989007E5E83 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		E04187B61FE13A85007E5E83 /* Geolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Geolocation.swift; path = DressApp/Utility/Geolocation.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -93,14 +93,6 @@
 			path = ../../../DressApp/DressApp/DressApp/Data;
 			sourceTree = "<group>";
 		};
-		7B502EBD1FE43A9900C8D198 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				B19D7A3C1FE428F100A42AD4 /* MeTableViewController.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		7B7DCD791FD997110024F2B8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +107,7 @@
 		7B7DCD7C1FD997110024F2B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B1EF195B1FE467190044D072 /* SettingsTableViewController.swift */,
 				7B502EBE1FE43AB000C8D198 /* MeTableViewController.swift */,
 				7B502EBF1FE43AB000C8D198 /* WardrobeNavigationViewController.swift */,
 				B13097D51FE280460095C750 /* WardrobeTableViewController.swift */,
@@ -129,7 +122,6 @@
 			children = (
 				7B8DA5701FD98C54003E9785 /* DressApp */,
 				7B8DA56F1FD98C54003E9785 /* Products */,
-				7B502EBD1FE43A9900C8D198 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,10 +236,10 @@
 				5C69B0141FE434120006C2E6 /* WardrobeCollectionViewCell.swift in Sources */,
 				5C69B0121FE3CA570006C2E6 /* WardrobeCollectionViewController.swift in Sources */,
 				7B502EC01FE43AB000C8D198 /* MeTableViewController.swift in Sources */,
+				B1EF195C1FE467190044D072 /* SettingsTableViewController.swift in Sources */,
 				B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */,
 				E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */,
 				7B31D5AD1FE15F780038DA6E /* Enumerations.swift in Sources */,
-				B19D7A3D1FE428F100A42AD4 /* MeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

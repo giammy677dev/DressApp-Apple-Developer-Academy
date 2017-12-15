@@ -29,6 +29,29 @@ class WardrobeCollectionViewController: UICollectionViewController {
 //        pantalone.append(provaPantalone)
         print ("cella scelta: \(cellPushed!)")
         
+        // Set the title of the views basing on the cell pushed in the previously table view
+        if cellPushed == 0 {
+            self.title = "T-Shirts"
+        }
+        else if cellPushed == 1 {
+            self.title = "Shirts"
+        }
+        else if cellPushed == 2 {
+            self.title = "Sweaters"
+        }
+        else if cellPushed == 3 {
+            self.title = "Dresses"
+        }
+        else if cellPushed == 4 {
+            self.title = "Trousers"
+        }
+        else if cellPushed == 5 {
+            self.title = "Shoes"
+        }
+        else {
+            self.title = "Skirts"
+        }
+        
       
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 

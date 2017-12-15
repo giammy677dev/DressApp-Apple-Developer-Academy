@@ -1,5 +1,5 @@
 //
-//  MeTableViewController.swift
+//  SettingsTableViewController.swift
 //  DressApp
 //
 //  Created by Gian Marco Orlando on 15/12/17.
@@ -8,41 +8,19 @@
 
 import UIKit
 
-class MeTableViewController: UITableViewController {
-    @IBOutlet weak var userProfileCell: UITableViewCell!
-    @IBOutlet weak var userProfileImageView: UIImageView!
-    @IBOutlet weak var userNameCell: UITableViewCell!
-    @IBOutlet weak var userAgeCell: UITableViewCell!
-    @IBOutlet weak var userGenreCell: UITableViewCell!
-    @IBOutlet weak var lastOutfitCell: UITableViewCell!
-    @IBOutlet weak var changeSettingsCell: UITableViewCell!
+class SettingsTableViewController: UITableViewController {
+    @IBOutlet weak var userNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true //set large title
-        
-        // Set the image circular
-        self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width / 2;
-        userProfileImageView.clipsToBounds = true
-        userProfileImageView.layer.borderWidth = 3.0;
-        userProfileImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
-        userProfileImageView.layer.borderWidth = 2 // as you wish
+        userNameTextField.text = "\(User.shared.firstName)" + " " + "\(User.shared.secondName)"
         
         // Setting the interaction with the table
         tableView.isScrollEnabled = false
-        userProfileCell.isUserInteractionEnabled = false
-        userNameCell.isUserInteractionEnabled = false
-        userAgeCell.isUserInteractionEnabled = false
-        userGenreCell.isUserInteractionEnabled = false
         
         // Setting the end of the table
         tableView.tableFooterView = UIView(frame: .zero)
-        
-        // Setting the content of the rows
-        userNameCell.textLabel?.text = "\(User.shared.firstName)" + " " + "\(User.shared.secondName)"
-        userAgeCell.textLabel?.text = "Remember to set the date"
-        userGenreCell.textLabel?.text = "\(User.shared.genre)"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,22 +38,28 @@ class MeTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        if section == 0 {
+        return 3
+        }
+        else {
+            return 2
+        }
     }
 
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-//
-//        // Configure the cell...
-//
-//
-//        return cell
-//    }
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
