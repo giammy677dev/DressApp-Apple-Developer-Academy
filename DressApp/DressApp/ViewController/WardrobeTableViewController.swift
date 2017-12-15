@@ -50,27 +50,27 @@ class WardrobeTableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Prova"
         case 1:
             cell.textLabel?.text = "Shirts"
-            //            cell.imageView?.image =
+                        cell.imageView?.image = #imageLiteral(resourceName: "Shirt")
             cell.detailTextLabel?.text = "Prova"
         case 2:
             cell.textLabel?.text = "Sweaters"
-            cell.imageView?.image = #imageLiteral(resourceName: "Sweater")
+            cell.imageView?.image = #imageLiteral(resourceName: "Maglione")
             cell.detailTextLabel?.text = "Prova"
         case 3:
             cell.textLabel?.text = "Dresses"
-            //            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            //            cell.imageView?.image = 
             cell.detailTextLabel?.text = "Prova"
         case 4:
             cell.textLabel?.text = "Trousers"
-            //            cell.imageView?.image = #imageLiteral(resourceName: "Trouser")
+            cell.imageView?.image = #imageLiteral(resourceName: "Trouser")
             cell.detailTextLabel?.text = "Prova"
         case 5:
             cell.textLabel?.text = "Shoes"
-            //            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            //            cell.imageView?.image =
             cell.detailTextLabel?.text = "Prova"
         case 6:
             cell.textLabel?.text = "Skirts"
-            //            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            //            cell.imageView?.image =
             cell.detailTextLabel?.text = "Prova"
         default:
             cell.textLabel?.text = "Error! No category found!"
