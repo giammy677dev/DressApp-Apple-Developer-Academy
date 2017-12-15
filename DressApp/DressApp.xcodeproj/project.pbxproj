@@ -21,7 +21,9 @@
 		7B8DA5771FD98C54003E9785 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA5751FD98C54003E9785 /* Main.storyboard */; };
 		7B8DA5791FD98C54003E9785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA5781FD98C54003E9785 /* Assets.xcassets */; };
 		7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA57A1FD98C54003E9785 /* LaunchScreen.storyboard */; };
+		7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */; };
 		B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13097D51FE280460095C750 /* WardrobeTableViewController.swift */; };
+		B19D7A3D1FE428F100A42AD4 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19D7A3C1FE428F100A42AD4 /* MeTableViewController.swift */; };
 		B1B1536B1FE3C80A00558A45 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */; };
 		E04187B51FE13989007E5E83 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B41FE13989007E5E83 /* Weather.swift */; };
 		E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B61FE13A85007E5E83 /* Geolocation.swift */; };
@@ -44,7 +46,9 @@
 		7B8DA5781FD98C54003E9785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B8DA57B1FD98C54003E9785 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B8DA57D1FD98C54003E9785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AvatarImageContext.swift; path = DressApp/Utility/AvatarImageContext.swift; sourceTree = SOURCE_ROOT; };
 		B13097D51FE280460095C750 /* WardrobeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTableViewController.swift; sourceTree = "<group>"; };
+		B19D7A3C1FE428F100A42AD4 /* MeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		E04187B41FE13989007E5E83 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		E04187B61FE13A85007E5E83 /* Geolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Geolocation.swift; path = DressApp/Utility/Geolocation.swift; sourceTree = SOURCE_ROOT; };
@@ -66,6 +70,7 @@
 			children = (
 				E04187B61FE13A85007E5E83 /* Geolocation.swift */,
 				E04187B41FE13989007E5E83 /* Weather.swift */,
+				7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */,
 			);
 			name = Utility;
 			path = DressApp/Utility;
@@ -215,6 +220,7 @@
 			files = (
 				E04187B51FE13989007E5E83 /* Weather.swift in Sources */,
 				7B31D5AC1FE15F780038DA6E /* Clothes.swift in Sources */,
+				7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */,
 				7B8DA5721FD98C54003E9785 /* AppDelegate.swift in Sources */,
 				7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */,
 				7B81F9E51FE2A4B900C29D53 /* User.swift in Sources */,
@@ -224,6 +230,7 @@
 				B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */,
 				E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */,
 				7B31D5AD1FE15F780038DA6E /* Enumerations.swift in Sources */,
+				B19D7A3D1FE428F100A42AD4 /* MeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

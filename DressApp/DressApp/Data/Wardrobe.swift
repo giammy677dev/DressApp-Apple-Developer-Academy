@@ -22,6 +22,20 @@ class Wardrobe {
     private var shoes: [Shoes] = []
     private var dresses: [Dress] = []
     
+    private var lastOutfits: [Outfit] = []
+    /*
+     For future updates: a user could save an outfit in a preferred outfits array
+     */
+    func addToLastOutfits(outfit: Outfit) {
+        lastOutfits.insert(outfit, at: 0)
+        if lastOutfits.count > 7 {
+            _ = lastOutfits.popLast()
+        }
+    }
+    
+    func getLastOutfits() -> [Outfit] {
+        return lastOutfits
+    }
     
     func add<C: Cloth>(cloth: C) {
         /*
@@ -46,6 +60,41 @@ class Wardrobe {
 
         }
     }
+    
+    
+    
+    func match<C: Cloth>(cloth:C) -> [C] {
+        
+        if cloth is Trousers {
+            
+            var matchedTrousers: [Trousers] = []
+            
+            for item in trousers {
+                if matches(cloth: cloth, with: item) {
+                    matchedTrousers.append(item)
+                }
+            }
+            
+            return matchedTrousers as! [C]
+            
+        }
+        
+        
+        let c: [C] = []
+        
+        return c
+        
+    }
+    
+    
+    func matches<C: Cloth>(cloth: C, with: C) -> Bool {
+        return true
+    }
+    
+    
+    /*
+     Get methods
+     */
     
     func getTrousers() -> [Trousers] {
         return trousers
