@@ -21,6 +21,7 @@
 		7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA57A1FD98C54003E9785 /* LaunchScreen.storyboard */; };
 		7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */; };
 		B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13097D51FE280460095C750 /* WardrobeTableViewController.swift */; };
+		B1B1536B1FE3C80A00558A45 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */; };
 		E04187B51FE13989007E5E83 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B41FE13989007E5E83 /* Weather.swift */; };
 		E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B61FE13A85007E5E83 /* Geolocation.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		7B8DA57D1FD98C54003E9785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AvatarImageContext.swift; path = DressApp/Utility/AvatarImageContext.swift; sourceTree = SOURCE_ROOT; };
 		B13097D51FE280460095C750 /* WardrobeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTableViewController.swift; sourceTree = "<group>"; };
+		B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		E04187B41FE13989007E5E83 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		E04187B61FE13A85007E5E83 /* Geolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Geolocation.swift; path = DressApp/Utility/Geolocation.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 			children = (
 				5C4574541FE26D1400FC2A55 /* Me.storyboard */,
 				5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */,
+				B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */,
 				5C45744E1FE26C8D00FC2A55 /* Today.storyboard */,
 			);
 			path = Storyboards;
@@ -195,6 +198,7 @@
 				5C4574551FE26D1400FC2A55 /* Me.storyboard in Resources */,
 				7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */,
 				7B8DA5791FD98C54003E9785 /* Assets.xcassets in Resources */,
+				B1B1536B1FE3C80A00558A45 /* CollectionView.storyboard in Resources */,
 				7B8DA5771FD98C54003E9785 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
