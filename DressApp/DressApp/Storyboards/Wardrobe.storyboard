@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-451" y="131"/>
         </scene>
-        <!--Wardrobe Table View Controller-->
+        <!--Your Wardrobe-->
         <scene sceneID="FXM-uW-0qb">
             <objects>
                 <tableViewController id="lyd-Dc-3tk" customClass="WardrobeTableViewController" customModule="DressApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                             <outlet property="delegate" destination="lyd-Dc-3tk" id="lfR-Ig-f5J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="apo-Kk-uwZ"/>
+                    <navigationItem key="navigationItem" title="Your Wardrobe" id="apo-Kk-uwZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBH-bB-HpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +80,7 @@
                 <viewControllerPlaceholder storyboardName="CollectionView" id="mhz-Wc-e14" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQd-Is-SqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="130"/>
+            <point key="canvasLocation" x="1238" y="130"/>
         </scene>
     </scenes>
 </document>
