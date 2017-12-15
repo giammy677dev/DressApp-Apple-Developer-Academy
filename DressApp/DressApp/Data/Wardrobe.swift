@@ -61,6 +61,41 @@ class Wardrobe {
         }
     }
     
+    
+    
+    func match<C: Cloth>(cloth:C) -> [C] {
+        
+        if cloth is Trousers {
+            
+            var matchedTrousers: [Trousers] = []
+            
+            for item in trousers {
+                if matches(cloth: cloth, with: item) {
+                    matchedTrousers.append(item)
+                }
+            }
+            
+            return matchedTrousers as! [C]
+            
+        }
+        
+        
+        let c: [C] = []
+        
+        return c
+        
+    }
+    
+    
+    func matches<C: Cloth>(cloth: C, with: C) -> Bool {
+        return true
+    }
+    
+    
+    /*
+     Get methods
+     */
+    
     func getTrousers() -> [Trousers] {
         return trousers
     }

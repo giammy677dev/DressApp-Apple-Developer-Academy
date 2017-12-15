@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class User {
     
@@ -24,6 +25,8 @@ class User {
     }
     var firstName: String?
     var secondName: String?
+    var profilePic: UIImage?
+    
     
     /*
      As a singleton class, the init method is private and all properties of the singleton are optionals and set to nil.
@@ -41,6 +44,12 @@ class User {
         self.dateOfBirth = dateOfBirth
         self.firstName = firstName
         self.secondName = secondName
+        
+        if genre == .male {
+            profilePic = nil
+        } else {
+            profilePic = nil
+        }
         
     }
         
