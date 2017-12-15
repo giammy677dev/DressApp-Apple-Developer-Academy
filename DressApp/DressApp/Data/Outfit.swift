@@ -21,8 +21,16 @@ class Outfit {
     
     let imageAvatar: UIImage?
     
-    init(trousers: Trousers?, tShirt: TShirt?, shirt: Shirt?, sweater: Sweater?, skirt: Skirt?, shoes: Shoes?, dress: Dress?) {
-        <#statements#>
+    init(trousers: Trousers?, tShirt: TShirt?, shirt: Shirt?, sweater: Sweater?, skirt: Skirt?, shoes: Shoes?, dress: Dress?, image: UIImage?) {
+        self.trousers = trousers
+        self.tShirt = tShirt
+        self.shirt = shirt
+        self.sweater = sweater
+        self.skirt = skirt
+        self.shoes = shoes
+        self.dress = dress
+        
+        self.imageAvatar = image
     }
     
 }

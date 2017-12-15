@@ -22,6 +22,20 @@ class Wardrobe {
     private var shoes: [Shoes] = []
     private var dresses: [Dress] = []
     
+    private var lastOutfits: [Outfit] = []
+    /*
+     For future updates: a user could save an outfit in a preferred outfits array
+     */
+    func addToLastOutfits(outfit: Outfit) {
+        lastOutfits.insert(outfit, at: 0)
+        if lastOutfits.count > 7 {
+            _ = lastOutfits.popLast()
+        }
+    }
+    
+    func getLastOutfits() -> [Outfit] {
+        return lastOutfits
+    }
     
     func add<C: Cloth>(cloth: C) {
         /*

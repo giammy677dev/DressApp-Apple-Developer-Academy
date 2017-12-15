@@ -43,8 +43,7 @@ class User {
         self.secondName = secondName
         
     }
-    
-    
+        
     
     enum UserGenre {
         case male
