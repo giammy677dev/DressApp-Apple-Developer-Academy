@@ -22,18 +22,16 @@ class WardrobeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
 
         //        switch (genre) {
         //        case "male":
-        return 6
+//        return 6
         //        case "female":
-//        return 7
+        return 7
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -47,7 +45,7 @@ class WardrobeTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "T-shirts"
-            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.imageView?.image = #imageLiteral(resourceName: "Maglietta160x160")
             cell.detailTextLabel?.text = "Prova"
         case 1:
             cell.textLabel?.text = "Shirts"
@@ -55,7 +53,7 @@ class WardrobeTableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Prova"
         case 2:
             cell.textLabel?.text = "Sweaters"
-            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.imageView?.image = #imageLiteral(resourceName: "Sweater")
             cell.detailTextLabel?.text = "Prova"
         case 3:
             cell.textLabel?.text = "Dresses"
@@ -63,7 +61,7 @@ class WardrobeTableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Prova"
         case 4:
             cell.textLabel?.text = "Trousers"
-            cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
+            cell.imageView?.image = #imageLiteral(resourceName: "Trouser")
             cell.detailTextLabel?.text = "Prova"
         case 5:
             cell.textLabel?.text = "Shoes"

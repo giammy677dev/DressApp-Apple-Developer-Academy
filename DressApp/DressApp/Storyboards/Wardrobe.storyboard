@@ -57,6 +57,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mhz-Wc-e14" kind="show" id="7xB-jY-jHO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -70,6 +73,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBH-bB-HpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="562" y="131"/>
+        </scene>
+        <!--CollectionView-->
+        <scene sceneID="SGJ-hQ-AIh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CollectionView" id="mhz-Wc-e14" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQd-Is-SqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="130"/>
         </scene>
     </scenes>
 </document>
