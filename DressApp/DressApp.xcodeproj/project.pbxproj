@@ -10,6 +10,8 @@
 		5C45744F1FE26C8D00FC2A55 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C45744E1FE26C8D00FC2A55 /* Today.storyboard */; };
 		5C4574511FE26CA800FC2A55 /* Wardrobe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */; };
 		5C4574551FE26D1400FC2A55 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4574541FE26D1400FC2A55 /* Me.storyboard */; };
+		5C69B0121FE3CA570006C2E6 /* WardrobeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */; };
+		5C69B0141FE434120006C2E6 /* WardrobeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */; };
 		7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A61FE15F780038DA6E /* Wardrobe.swift */; };
 		7B31D5AC1FE15F780038DA6E /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A71FE15F780038DA6E /* Clothes.swift */; };
 		7B31D5AD1FE15F780038DA6E /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A81FE15F780038DA6E /* Enumerations.swift */; };
@@ -29,6 +31,8 @@
 		5C45744E1FE26C8D00FC2A55 /* Today.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
 		5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wardrobe.storyboard; sourceTree = "<group>"; };
 		5C4574541FE26D1400FC2A55 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionViewController.swift; sourceTree = "<group>"; };
+		5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B31D5A61FE15F780038DA6E /* Wardrobe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wardrobe.swift; sourceTree = "<group>"; };
 		7B31D5A71FE15F780038DA6E /* Clothes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		7B31D5A81FE15F780038DA6E /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				B13097D51FE280460095C750 /* WardrobeTableViewController.swift */,
+				5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */,
+				5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 				7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */,
 				7B81F9E51FE2A4B900C29D53 /* User.swift in Sources */,
 				7B81F9E61FE2A4B900C29D53 /* Outfit.swift in Sources */,
+				5C69B0141FE434120006C2E6 /* WardrobeCollectionViewCell.swift in Sources */,
+				5C69B0121FE3CA570006C2E6 /* WardrobeCollectionViewController.swift in Sources */,
 				B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */,
 				E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */,
 				7B31D5AD1FE15F780038DA6E /* Enumerations.swift in Sources */,

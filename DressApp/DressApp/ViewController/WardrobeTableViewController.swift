@@ -9,6 +9,9 @@
 import UIKit
 
 class WardrobeTableViewController: UITableViewController {
+    
+    var segueID = "toCollection"
+    var selectedRow: Int = 0
 
     override func loadView() {
             super.loadView()
@@ -81,7 +84,20 @@ class WardrobeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // get a reference to the second view controller
+        let secondViewController = segue.destination as! WardrobeCollectionViewController
+        
+        // set a variable in the second view controller with the data to pass
+        let selectedRowNumber = tableView.indexPathForSelectedRow!.last
+        secondViewController.cellPushed = selectedRowNumber
+        
+    }
+    
 
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
