@@ -23,6 +23,7 @@
 		7B8DA5771FD98C54003E9785 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA5751FD98C54003E9785 /* Main.storyboard */; };
 		7B8DA5791FD98C54003E9785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA5781FD98C54003E9785 /* Assets.xcassets */; };
 		7B8DA57C1FD98C54003E9785 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8DA57A1FD98C54003E9785 /* LaunchScreen.storyboard */; };
+		7B98D7DD1FE6EF4D0099CF27 /* Classes Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98D7DC1FE6EF4D0099CF27 /* Classes Extensions.swift */; };
 		7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */; };
 		B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13097D51FE280460095C750 /* WardrobeTableViewController.swift */; };
 		B1B1536B1FE3C80A00558A45 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */; };
@@ -50,6 +51,7 @@
 		7B8DA5781FD98C54003E9785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B8DA57B1FD98C54003E9785 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B8DA57D1FD98C54003E9785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B98D7DC1FE6EF4D0099CF27 /* Classes Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classes Extensions.swift"; sourceTree = "<group>"; };
 		7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AvatarImageContext.swift; path = DressApp/Utility/AvatarImageContext.swift; sourceTree = SOURCE_ROOT; };
 		B13097D51FE280460095C750 /* WardrobeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTableViewController.swift; sourceTree = "<group>"; };
 		B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				E04187B61FE13A85007E5E83 /* Geolocation.swift */,
 				E04187B41FE13989007E5E83 /* Weather.swift */,
 				7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */,
+				7B98D7DC1FE6EF4D0099CF27 /* Classes Extensions.swift */,
 			);
 			name = Utility;
 			path = DressApp/Utility;
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04187B51FE13989007E5E83 /* Weather.swift in Sources */,
+				7B98D7DD1FE6EF4D0099CF27 /* Classes Extensions.swift in Sources */,
 				7B31D5AC1FE15F780038DA6E /* Clothes.swift in Sources */,
 				7B502EC11FE43AB000C8D198 /* WardrobeNavigationViewController.swift in Sources */,
 				7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */,

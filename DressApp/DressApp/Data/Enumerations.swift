@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 enum ClothCategory {
@@ -39,62 +40,29 @@ enum Model {
     case short
 }
 
-enum Color {
+enum Color: UInt {
     
-    case black
-    case white
-    case navajoWhite
-    case red
-    case blue
-    case lightSkyBlue
-    case navy
-    case torchRed
-    case saddleBrown
-    case pink
-    case silver
-    case maroon
-    case myrtle
-    case indigo
-    case putty
-    case yellow
+    case black = 0x000000
+    case white = 0xFFFFFF
+    case navajoWhite = 0xFFE1B0
+    case red = 0xFF0000
+    case blue = 0x0020C2
+    case lightSkyBlue = 0x82E0FF
+    case navy = 0x000080
+    case torchRed = 0xFF0041
+    case saddleBrown = 0x824200
+    case pink = 0xFFC0CE
+    case silver = 0xC0C0C0
+    case maroon = 0x800000
+    case myrtle = 0x004200
+    case indigo = 0x6000A1
+    case putty = 0xD2B06A
+    case yellow = 0xFFFF00
     
-    func hex() -> Int {
+    func uiColor() -> UIColor {
         
-        switch self {
-            
-            case .black:
-                return 0x000000
-            case .white:
-                return 0xFFFFFF
-            case .navajoWhite:
-                return 0xFFE1B0
-            case .red:
-                return 0xFF0000
-            case .blue:
-                return 0x0020C2
-            case .lightSkyBlue:
-                return 0x82E0FF
-            case .navy:
-                return 0x000080
-            case .torchRed:
-                return 0xFF0041
-            case .saddleBrown:
-                return 0x824200
-            case .pink:
-                return 0xFFC0CE
-            case .silver:
-                return 0xC0C0C0
-            case .maroon:
-                return 0x800000
-            case .myrtle:
-                return 0x004200
-            case .indigo:
-                return 0x6000A1
-            case .putty:
-                return 0xD2B06A
-            case .yellow:
-                return 0xFFFF00
-        }
+        return UIColor(hex: self.rawValue)
         
     }
+    
 }
