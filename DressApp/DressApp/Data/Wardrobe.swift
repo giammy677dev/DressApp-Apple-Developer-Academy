@@ -63,32 +63,100 @@ class Wardrobe {
     
     
     
-    func match<C: Cloth>(cloth:C) -> [C] {
-        
-        if cloth is Trousers {
-            
-            var matchedTrousers: [Trousers] = []
-            
-            for item in trousers {
-                if matches(cloth: cloth, with: item) {
-                    matchedTrousers.append(item)
-                }
-            }
-            
-            return matchedTrousers as! [C]
-            
+    func match<C: Cloth>(cloth: C, category: ClothCategory) -> [Any]? {
+        /*
+         Every cloth added to the wardrobe should have a collection of matched clothes. To find clothes that match that cloth, a
+         switch case on the category of the clothes to find iterates over the global category array and through the match function
+         of every cloth it is possible to find out if the condition in verified. Then, an array of matched clothes is returned
+         */
+        guard cloth.category != category else {
+            return nil
         }
         
+        var clothesMatched: [Any]?
         
-        let c: [C] = []
+        switch category {
+            
+            case .dress:
+                for dress in dresses {
+                    if dress.matches(with: cloth) {
+                        guard let _ = clothesMatched else {
+                            clothesMatched = [Dress]()
+                            continue
+                        }
+                        clothesMatched?.append(dress)
+                    }
+                }
+            
+            case .shirt:
+                for shirt in shirts {
+                    if shirt.matches(with: cloth) {
+                        guard let _ = clothesMatched else {
+                            clothesMatched = [Shirt]()
+                            continue
+                        }
+                        clothesMatched?.append(shirt)
+                    }
+                }
+            
+            case .shoes:
+                for item in shoes {
+                    if item.matches(with: cloth) {
+                        guard let _ = clothesMatched else {
+                            clothesMatched = [Shoes]()
+                            continue
+                        }
+                        clothesMatched?.append(item)
+                    }
+                }
+            
+            case .skirt:
+                for skirt in skirts {
+                    if skirt.matches(with: cloth) {
+                        guard let _ = clothesMatched else {
+                            clothesMatched = [Skirt]()
+                            continue
+                        }
+                        clothesMatched?.append(skirt)
+                    }
+                }
+            
+            case .sweater:
+                for sweater in sweaters {
+                    if sweater.matches(with: cloth) {
+                        guard let _ = clothesMatched else {
+                            clothesMatched = [Sweater]()
+                            continue
+                        }
+                        clothesMatched?.append(sweater)
+                    }
+                }
+            
+            case .trousers:
+                for item in trousers {
+                    if item.matches(with: cloth) {
+                        guard let _ = clothesMatched else {
+                            clothesMatched = [Trousers]()
+                            continue
+                        }
+                        clothesMatched?.append(item)
+                    }
+                }
+            
+            case .tShirt:
+                for tShirt in tShirts {
+                    if tShirt.matches(with: cloth) {
+                        guard let _ = clothesMatched else {
+                            clothesMatched = [TShirt]()
+                            continue
+                        }
+                        clothesMatched?.append(tShirt)
+                    }
+                }
+        }
         
-        return c
+        return clothesMatched
         
-    }
-    
-    
-    func matches<C: Cloth>(cloth: C, with: C) -> Bool {
-        return true
     }
     
     

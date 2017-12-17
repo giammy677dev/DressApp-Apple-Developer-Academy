@@ -24,7 +24,7 @@ class Cloth {
         self.category = category
         isElegant = elegant
         Wardrobe.shared.add(cloth: self)
-        
+        self.askWardrobeForMatchedClothes()
     }
     
     var matchedTrousers: [Trousers]?
@@ -35,13 +35,43 @@ class Cloth {
     var matchedShoes: [Shoes]?
     var matchedDresses: [Dress]?
     
-    func askWardrobeForMatchedClothes() {
+    private func askWardrobeForMatchedClothes() {
         
-        
-        
+        matchedTrousers = Wardrobe.shared.match(cloth: self, category: .trousers) as? [Trousers]
+        matchedTShirts = Wardrobe.shared.match(cloth: self, category: .tShirt) as? [TShirt]
+        matchedShirts = Wardrobe.shared.match(cloth: self, category: .shirt) as? [Shirt]
+        matchedSweaters = Wardrobe.shared.match(cloth: self, category: .sweater) as? [Sweater]
+        matchedSkirts = Wardrobe.shared.match(cloth: self, category: .skirt) as? [Skirt]
+        matchedShoes = Wardrobe.shared.match(cloth: self, category: .shoes) as? [Shoes]
+        matchedDresses = Wardrobe.shared.match(cloth: self, category: .dress) as? [Dress]
         
     }
     
+    func matches(with: Cloth) -> Bool {
+        
+        if true {
+        
+            switch with.category {
+                case .dress:
+                    matchedDresses?.append(with as! Dress)
+                case .shirt:
+                    matchedShirts?.append(with as! Shirt)
+                case .shoes:
+                    matchedShoes?.append(with as! Shoes)
+                case .skirt:
+                    matchedSkirts?.append(with as! Skirt)
+                case .sweater:
+                    matchedSweaters?.append(with as! Sweater)
+                case .trousers:
+                    matchedTrousers?.append(with as! Trousers)
+                case .tShirt:
+                    matchedTShirts?.append(with as! TShirt)
+            }
+            return true
+            
+        }
+        
+    }
     
 }
 
