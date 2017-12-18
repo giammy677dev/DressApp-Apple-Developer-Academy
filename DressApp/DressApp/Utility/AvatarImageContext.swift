@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 func takeSnapshotOfView(view: UIView) -> UIImage? {
-    
-    UIGraphicsBeginImageContextWithOptions(view.frame.size, true, 1.0)
+    /*
+     Takes a view and returns the UIImage like a screenshot:
+     */
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 1.0)
     view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()

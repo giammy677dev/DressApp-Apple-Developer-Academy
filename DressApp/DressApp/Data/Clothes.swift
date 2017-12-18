@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Cloth {
     
@@ -16,6 +17,7 @@ class Cloth {
     var description: String?
     var isElegant: Bool
     var lastTimeUsed: Date?
+    let image: UIImage? = nil
     
     init(color: Color, material: Material, description: String?, elegant: Bool, category: ClothCategory) {
         self.color = color
@@ -70,7 +72,7 @@ class Cloth {
             return true
             
         }
-        
+
     }
     
 }
@@ -122,12 +124,23 @@ class Sweater: Cloth {
 
 class Skirt: Cloth {
     
+    convenience init(color: Color, material: Material, description: String?, elegant: Bool) {
+        self.init(color: color, material: material, description: description, elegant: elegant, category: .skirt)
+    }
+    
 }
 
 class Shoes: Cloth {
+    
+    convenience init(color: Color, material: Material, description: String?, elegant: Bool) {
+        self.init(color: color, material: material, description: description, elegant: elegant, category: .shoes)
+    }
     
 }
 
 class Dress: Cloth {
     
+    convenience init(color: Color, material: Material, description: String?, elegant: Bool) {
+        self.init(color: color, material: material, description: description, elegant: elegant, category: .dress)
+    }
 }
