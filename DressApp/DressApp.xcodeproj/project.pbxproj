@@ -27,6 +27,8 @@
 		B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13097D51FE280460095C750 /* WardrobeTableViewController.swift */; };
 		B13D76B61FE7D38800DC0023 /* Add Clothes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13D76B51FE7D38800DC0023 /* Add Clothes.storyboard */; };
 		B13D76B81FE7D56000DC0023 /* AddClothesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13D76B71FE7D56000DC0023 /* AddClothesTableViewController.swift */; };
+		B17CDC6B1FE851FD007A474A /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CDC6A1FE851FD007A474A /* Checkmark.swift */; };
+		B17CDC6D1FE85EC9007A474A /* OneLifeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CDC6C1FE85EC9007A474A /* OneLifeTableViewController.swift */; };
 		B1B1536B1FE3C80A00558A45 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */; };
 		B1EF195C1FE467190044D072 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF195B1FE467190044D072 /* SettingsTableViewController.swift */; };
 		E04187B51FE13989007E5E83 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B41FE13989007E5E83 /* Weather.swift */; };
@@ -56,6 +58,8 @@
 		B13097D51FE280460095C750 /* WardrobeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTableViewController.swift; sourceTree = "<group>"; };
 		B13D76B51FE7D38800DC0023 /* Add Clothes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Add Clothes.storyboard"; sourceTree = "<group>"; };
 		B13D76B71FE7D56000DC0023 /* AddClothesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesTableViewController.swift; sourceTree = "<group>"; };
+		B17CDC6A1FE851FD007A474A /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
+		B17CDC6C1FE85EC9007A474A /* OneLifeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLifeTableViewController.swift; sourceTree = "<group>"; };
 		B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		B1EF195B1FE467190044D072 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E04187B41FE13989007E5E83 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		7B31D5A41FE15F780038DA6E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B17CDC6A1FE851FD007A474A /* Checkmark.swift */,
 				7B81F9E41FE2A4B900C29D53 /* Outfit.swift */,
 				7B81F9E31FE2A4B900C29D53 /* User.swift */,
 				7B31D5A61FE15F780038DA6E /* Wardrobe.swift */,
@@ -113,6 +118,7 @@
 		7B7DCD7C1FD997110024F2B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B17CDC6C1FE85EC9007A474A /* OneLifeTableViewController.swift */,
 				B13D76B71FE7D56000DC0023 /* AddClothesTableViewController.swift */,
 				B1EF195B1FE467190044D072 /* SettingsTableViewController.swift */,
 				7B502EBE1FE43AB000C8D198 /* MeTableViewController.swift */,
@@ -238,6 +244,8 @@
 				B13D76B81FE7D56000DC0023 /* AddClothesTableViewController.swift in Sources */,
 				7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */,
 				7B8DA5721FD98C54003E9785 /* AppDelegate.swift in Sources */,
+				B17CDC6D1FE85EC9007A474A /* OneLifeTableViewController.swift in Sources */,
+				B17CDC6B1FE851FD007A474A /* Checkmark.swift in Sources */,
 				7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */,
 				7B81F9E51FE2A4B900C29D53 /* User.swift in Sources */,
 				7B81F9E61FE2A4B900C29D53 /* Outfit.swift in Sources */,

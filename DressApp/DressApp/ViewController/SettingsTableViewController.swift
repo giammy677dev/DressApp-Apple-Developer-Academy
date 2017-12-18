@@ -14,7 +14,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userNameTextField.text = "\(User.shared.firstName)" + " " + "\(User.shared.secondName)"
+        userNameTextField.text = User.shared.name!
         
         // Setting the interaction with the table
         tableView.isScrollEnabled = false

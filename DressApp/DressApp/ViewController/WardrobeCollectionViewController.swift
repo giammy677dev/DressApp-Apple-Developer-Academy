@@ -13,9 +13,8 @@ private let reuseIdentifier = "Cell"
 class WardrobeCollectionViewController: UICollectionViewController {
     
     var imgs: [String] = []
-
+    var segueID = "toAddClothe"
     var cellPushed: Int?
-    
     var clothes: [Any] = []     //VETTORE DOVE METTERE I VESTITI(SE MAGLIETTE, PANTALONI ETC.)
     
 //    var prova1 = TShirt(color: .red, material: Material.cashmere, description: nil, elegant: true, model: Model.short)
@@ -201,6 +200,15 @@ class WardrobeCollectionViewController: UICollectionViewController {
             return collectionViewMargin
         }
 
-        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == segueID {
+                if let addVC = segue.destination as?
+                    AddClothesTableViewController {
+                    if let x = cellPushed {
+                        addVC.dressCategory = x
+                    }
+                }
+            }
+        }
     }
 

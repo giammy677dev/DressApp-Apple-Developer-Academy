@@ -2,20 +2,57 @@
 //  AppDelegate.swift
 //  DressApp
 //
-//  Created by Stefano Formicola on 07/12/2017.
+//  Created by Gian Marco Orlando on 07/12/2017.
 //  Copyright © 2017 Checkmate Team. All rights reserved.
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //<------------------------------- NOTIFICATIONS------------------------------->
+        
+        // Allow/disallow notification alert
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: [.alert, .sound, .badge], completionHandler: {userDidAllow, error in
+                //if userDidAllow : do something if you want to
+        })
+        
+        //Set notification to trigger to a fixed hour everyday
+        var dateComponents = DateComponents()
+        dateComponents.hour = 07
+        dateComponents.minute = 00
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        //Set notification content
+        let content = UNMutableNotificationContent()
+        content.title = "Daily outfit ready!"
+        content.body = "Hey, don't spend time in front of your wardrobe: your daily outfit is here!"
+        content.sound = UNNotificationSound.default()
+        content.badge = 1
+        UIApplication.shared.applicationIconBadgeNumber = 0 //Set the badge notification to 0 when user opens the app
+        
+        let request = UNNotificationRequest(
+            identifier: "yourIdentifier", content: content, trigger: trigger
+        )
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        // <-------------------------------ONE-LIFE VIEW----------------------------->
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let rootViewController = storyboard.instantiateViewController(withIdentifier: UserDefaults.standard.bool(forKey: "termsAccepted") ? "termsViewControllerID" : "homeViewControllerID")
+        
+        window?.rootViewController = rootViewController
+        
+        // The following is set by defaults: don't touch it!
         return true
     }
 

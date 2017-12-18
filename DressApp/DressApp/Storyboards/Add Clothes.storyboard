@@ -130,6 +130,13 @@
                             <outlet property="delegate" destination="yJ4-Wk-a6q" id="rLM-3U-GE7"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="4gI-3d-ulp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="B6l-bU-qOi">
+                            <connections>
+                                <action selector="saveClothe:" destination="yJ4-Wk-a6q" id="R5o-Qo-oDB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="colorPickedLabel" destination="4Zv-JV-AS6" id="M6G-Ro-2Ob"/>
                         <outlet property="colorPickedView" destination="WGR-HD-sD7" id="yrG-tH-Pjq"/>
@@ -139,7 +146,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bG0-vq-kEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160.80000000000001" y="120.98950524737631"/>
+            <point key="canvasLocation" x="500" y="120.98950524737631"/>
         </scene>
     </scenes>
 </document>

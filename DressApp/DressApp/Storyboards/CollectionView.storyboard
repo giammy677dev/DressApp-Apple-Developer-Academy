@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" id="7ZS-8A-XUU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y6b-IB-1sT">
                             <connections>
-                                <segue destination="HTB-vt-K47" kind="show" id="YBv-aY-WET"/>
+                                <segue destination="HTB-vt-K47" kind="show" identifier="toaddClothe" id="YBv-aY-WET"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,7 +65,7 @@
                 <viewControllerPlaceholder storyboardName="Add Clothes" id="HTB-vt-K47" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8y-1v-Fhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2714" y="130"/>
+            <point key="canvasLocation" x="2529" y="130"/>
         </scene>
     </scenes>
 </document>

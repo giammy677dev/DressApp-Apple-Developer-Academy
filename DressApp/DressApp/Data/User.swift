@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+let defaults = UserDefaults.standard
+
 class User {
     
     static let shared = User()
@@ -23,8 +25,7 @@ class User {
         
         return (ageComponents?.year!)!
     }
-    var firstName: String?
-    var secondName: String?
+    var name: String?
     var profilePic: UIImage?
     
     
@@ -37,13 +38,12 @@ class User {
     
     private init() {}
     
-    func setUserInfo(genre: UserGenre, bodyShape: BodyShape, dateOfBirth: Date, firstName: String, secondName: String) {
+    func setUserInfo(genre: UserGenre, bodyShape: BodyShape, dateOfBirth: Date, name: String) {
 
         self.genre = genre
         self.bodyShape = bodyShape
         self.dateOfBirth = dateOfBirth
-        self.firstName = firstName
-        self.secondName = secondName
+        self.name = name
         
         if genre == .male {
             profilePic = nil
@@ -53,10 +53,9 @@ class User {
         
     }
         
-    
-    enum UserGenre {
-        case male
-        case female
+    enum UserGenre: String {
+        case male = "Male"
+        case female = "Female"
     }
     
     enum BodyShape {

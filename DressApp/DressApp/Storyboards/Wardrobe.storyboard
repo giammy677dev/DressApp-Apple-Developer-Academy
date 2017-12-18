@@ -58,7 +58,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mhz-Wc-e14" kind="show" id="7xB-jY-jHO"/>
+                                    <segue destination="mhz-Wc-e14" kind="show" identifier="" id="7xB-jY-jHO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
