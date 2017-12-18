@@ -40,9 +40,9 @@ class MeTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         
         // Setting the content of the rows
-        userNameCell.textLabel?.text = "\(User.shared.firstName)" + " " + "\(User.shared.secondName)"
+        userNameCell.textLabel?.text = User.shared.name!
         userAgeCell.textLabel?.text = "Remember to set the date"
-        userGenreCell.textLabel?.text = "\(User.shared.genre)"
+        userGenreCell.textLabel?.text = User.shared.genre?.rawValue
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
