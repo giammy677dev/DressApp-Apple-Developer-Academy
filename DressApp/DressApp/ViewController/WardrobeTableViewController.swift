@@ -42,8 +42,12 @@ class WardrobeTableViewController: UITableViewController {
     //        return "Your wardrobe"
     //    }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "prototypeCell", for: indexPath)
+        
+        
+        
         
         // Configure the cell...
         switch indexPath.row {
@@ -61,7 +65,7 @@ class WardrobeTableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Prova"
         case 3:
             cell.textLabel?.text = "Dresses"
-            //            cell.imageView?.image = 
+            cell.imageView?.image = #imageLiteral(resourceName: "Man Dress")
             cell.detailTextLabel?.text = "Prova"
         case 4:
             cell.textLabel?.text = "Trousers"
@@ -69,11 +73,11 @@ class WardrobeTableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Prova"
         case 5:
             cell.textLabel?.text = "Shoes"
-            //            cell.imageView?.image =
+//            cell.imageView?.image =
             cell.detailTextLabel?.text = "Prova"
         case 6:
             cell.textLabel?.text = "Skirts"
-            //            cell.imageView?.image =
+            cell.imageView?.image = #imageLiteral(resourceName: "Skirts")
             cell.detailTextLabel?.text = "Prova"
         default:
             cell.textLabel?.text = "Error! No category found!"
@@ -96,52 +100,4 @@ class WardrobeTableViewController: UITableViewController {
         secondViewController.cellPushed = selectedRowNumber
         
     }
-    
-
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

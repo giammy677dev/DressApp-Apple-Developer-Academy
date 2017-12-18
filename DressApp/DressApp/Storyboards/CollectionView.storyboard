@@ -47,10 +47,25 @@
                             <outlet property="delegate" destination="7pQ-zj-DsF" id="0WP-YD-4fs"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="7ZS-8A-XUU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y6b-IB-1sT">
+                            <connections>
+                                <segue destination="HTB-vt-K47" kind="show" id="YBv-aY-WET"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fp-Sj-lEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="131"/>
+            <point key="canvasLocation" x="1956" y="130.88455772113943"/>
+        </scene>
+        <!--Add Clothes-->
+        <scene sceneID="997-GZ-qFT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Add Clothes" id="HTB-vt-K47" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N8y-1v-Fhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2714" y="130"/>
         </scene>
     </scenes>
 </document>
