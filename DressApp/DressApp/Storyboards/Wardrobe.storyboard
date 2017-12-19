@@ -68,7 +68,9 @@
                             <outlet property="delegate" destination="lyd-Dc-3tk" id="lfR-Ig-f5J"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="My Wardrobe" image="Wardrobe Tab Bar" id="bb8-PT-Ob3"/>
                     <navigationItem key="navigationItem" title="Your Wardrobe" id="apo-Kk-uwZ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBH-bB-HpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,4 +85,7 @@
             <point key="canvasLocation" x="1238" y="130"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Wardrobe Tab Bar" width="24" height="24"/>
+    </resources>
 </document>

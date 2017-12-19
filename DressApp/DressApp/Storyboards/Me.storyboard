@@ -151,7 +151,9 @@
                             <outlet property="delegate" destination="kDp-dr-M3R" id="AiH-ug-hPp"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Me" image="Me Tab Bar" id="4a3-hB-TcL"/>
                     <navigationItem key="navigationItem" title="Your Profile" id="Z0t-c8-XzM"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="changeSettingsCell" destination="lbZ-aw-2VT" id="CqE-dT-Pmb"/>
                         <outlet property="lastOutfitCell" destination="8jx-Is-84G" id="iEJ-LT-fC3"/>
@@ -292,5 +294,6 @@
     </scenes>
     <resources>
         <image name="Batman" width="125" height="140"/>
+        <image name="Me Tab Bar" width="24" height="25"/>
     </resources>
 </document>
