@@ -53,9 +53,21 @@ class User {
         
     }
         
-    enum UserGenre: String {
-        case male = "Male"
-        case female = "Female"
+    enum UserGenre: Int {
+        case male = 0
+        case female
+        case other
+                
+        func string() -> String? {
+            switch self {
+            case .male:
+                return "Male"
+            case .female:
+                return "Female"
+            default:
+                return nil
+            }
+        }
     }
     
     enum BodyShape {

@@ -25,8 +25,8 @@ class Cloth {
         self.description = description
         self.category = category
         isElegant = elegant
-        Wardrobe.shared.add(cloth: self)
         self.askWardrobeForMatchedClothes()
+        Wardrobe.shared.add(cloth: self)
     }
     
     var matchedTrousers: [Trousers]?
@@ -74,6 +74,11 @@ class Cloth {
         }
 
     }
+    
+    
+    
+    
+    
     
 }
 

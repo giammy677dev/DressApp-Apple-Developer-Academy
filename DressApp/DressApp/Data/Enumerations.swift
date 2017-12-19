@@ -65,4 +65,144 @@ enum Color: UInt {
         
     }
     
+    func match(with: Color) -> Bool {
+        
+        switch self {
+            
+        case .black:
+            switch with {
+                case .lightSkyBlue, .silver, .torchRed:
+                    return true
+                default:
+                    return false
+            }
+            
+        case .white:
+            switch with {
+                    case .blue, .pink, .navajoWhite:
+                        return true
+            default:
+                return false
+            }
+        
+        case .navajoWhite:
+            switch with {
+                case .white, .red, .saddleBrown:
+                    return true
+            default:
+                return false
+            }
+            
+        case .red:
+            switch with {
+                case .white, .navajoWhite, .pink:
+                    return true
+                default:
+                    return false
+            }
+            
+        case .blue:
+            switch with {
+            case .lightSkyBlue, .torchRed, .silver:
+                return true
+            default:
+                return false
+            }
+            
+        case .lightSkyBlue:
+            switch with {
+            case .black, .navajoWhite, .silver:
+                return true
+            default:
+                return false
+            }
+            
+        case .navy:
+            switch with {
+            case .silver, .pink, .lightSkyBlue, .white:
+                return true
+            default:
+                return false
+            }
+            
+        case .torchRed:
+            switch with {
+            case .pink, .navajoWhite, .white:
+                return true
+            default:
+                return false
+            }
+            
+        case .saddleBrown:
+            switch with {
+            case .putty, .navajoWhite, .red:
+                return true
+            default:
+                return false
+            }
+            
+        case .pink:
+            switch with {
+            case .lightSkyBlue, .navy, .black:
+                return true
+            default:
+                return false
+            }
+            
+        case .silver:
+            switch with {
+            case .black, .pink, .lightSkyBlue:
+                return true
+            default:
+                return false
+            }
+            
+        case .maroon:
+            switch with {
+            case .pink, .navajoWhite, .black:
+                return true
+            default:
+                return false
+            }
+            
+        case .myrtle:
+            switch with {
+            case .silver, .black, .navajoWhite:
+                return true
+            default:
+                return false
+            }
+            
+        case .indigo:
+            switch with {
+            case .pink, .white, .navajoWhite:
+                return true
+            default:
+                return false
+            }
+            
+        case .putty:
+            switch with {
+            case .black, .saddleBrown, .maroon:
+                return true
+            default:
+                return false
+            }
+            
+        case .yellow:
+            switch with {
+            case .torchRed, .putty, .maroon:
+                return true
+            default:
+                return false
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
 }
