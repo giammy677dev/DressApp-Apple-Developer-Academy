@@ -45,10 +45,14 @@ class User {
         self.dateOfBirth = dateOfBirth
         self.name = name
         
+        UserDefaults.standard.set(name, forKey: "username") //Ho aggiunto le seguenti 3 righe
+        UserDefaults.standard.set(age, forKey: "birthdate")
+        UserDefaults.standard.set(profilePic, forKey: "profile pic")
+        
         if genre == .male {
-            profilePic = nil
+            profilePic = #imageLiteral(resourceName: "Man Profile Pic")
         } else {
-            profilePic = nil
+            profilePic = #imageLiteral(resourceName: "Woman Profile Pic")
         }
         
     }

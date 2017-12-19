@@ -22,7 +22,8 @@ class MeTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true //set large title
         
-        // Set the image circular
+        // Set the image
+        self.userProfileImageView.image = User.shared.profilePic
         self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width / 2;
         userProfileImageView.clipsToBounds = true
         userProfileImageView.layer.borderWidth = 3.0;
@@ -40,8 +41,8 @@ class MeTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         
         // Setting the content of the rows
-        userNameCell.textLabel?.text = User.shared.name!
-        userAgeCell.textLabel?.text = "Remember to set the date"
+        userNameCell.textLabel?.text = UserDefaults.standard.object(forKey: "username") as! String
+        userAgeCell.textLabel?.text = User.shared.age.description
         userGenreCell.textLabel?.text = User.shared.genre?.string()
 
         // Uncomment the following line to preserve selection between presentations
