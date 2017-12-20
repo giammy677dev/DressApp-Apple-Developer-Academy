@@ -22,6 +22,8 @@ class MeTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true //set large title
         
+        
+        
         // Set the image
         self.userProfileImageView.image = User.shared.profilePic
         self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width / 2;
