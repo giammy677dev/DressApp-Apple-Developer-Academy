@@ -43,10 +43,7 @@ class User: Codable {
         if let savedData = try? jsonEncoder.encode(User.shared) {
             let defaults = UserDefaults.standard
             defaults.set(savedData, forKey: "sharedUserInfo")
-        } else {
-            print("Failed to save data.")
         }
-        print("Saved")
     }
 
     func load() {

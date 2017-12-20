@@ -198,6 +198,7 @@
                         <outlet property="chosenElegantLabel" destination="rCb-tX-QlG" id="FhC-zj-Nwl"/>
                         <outlet property="chosenMaterialLabel" destination="yeS-tJ-rhC" id="En8-PE-AH2"/>
                         <outlet property="chosenModelLabel" destination="WNt-0w-TE3" id="0OC-C2-eQS"/>
+                        <outlet property="modelLabel" destination="wMC-tU-25j" id="Y8A-Gv-sTP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5d-aK-bfi" userLabel="First Responder" sceneMemberID="firstResponder"/>

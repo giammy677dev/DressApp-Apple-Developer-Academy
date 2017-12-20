@@ -55,7 +55,6 @@ class WardrobeCollectionViewController: UICollectionViewController {
             self.title = "Skirts"
         }
         
-      
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
     }
@@ -149,14 +148,12 @@ class WardrobeCollectionViewController: UICollectionViewController {
 
             let paddingSpace = (collectionViewMargin.left + collectionViewMargin.right) + collectionViewSpacing * CGFloat(imgs.count)
 
-            print (collectionViewMargin)
 
             let viewWidth = collectionView.frame.size.width
 
 
             let itemSize = (viewWidth - paddingSpace)/3
 
-            print (itemSize)
 
             return CGSize(width: itemSize, height: itemSize)
         }
@@ -172,7 +169,6 @@ class WardrobeCollectionViewController: UICollectionViewController {
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == segueID {
                 if let addVC = segue.destination as? AddClothesTableViewController {
-                    print ("ENTRATO")
                     if let x = cellPushed {
                         addVC.dressCategory = x
                     }
@@ -181,12 +177,10 @@ class WardrobeCollectionViewController: UICollectionViewController {
                 if let infoVC = segue.destination as? DressInfoTableViewController{
                     if let x = cellPushed{
                     infoVC.dressCategory = x
-                        print ("X:\(x)")
                     }
                     if let cellRowSelected =
                         collectionView?.indexPathsForSelectedItems?.last?.row{
                         infoVC.cellRowSelected = cellRowSelected
-                        print ("Elemento: \(cellRowSelected)")
 
                     }
 
