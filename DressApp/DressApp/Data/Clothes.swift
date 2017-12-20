@@ -17,7 +17,6 @@ class Cloth {
     var description: String?
     var isElegant: Bool
     var lastTimeUsed: Date?
-    let image: UIImage? = nil
     
     init(color: Color, material: Material, description: String?, elegant: Bool, category: ClothCategory) {
         self.color = color
@@ -75,10 +74,35 @@ class Cloth {
 
     }
     
+    func colorImageWithTexture(image: UIImage, texture: UIImage, color: UIColor) -> UIImage? {
+        
+        let imageColored = UIImageView(image: image.maskWithColor(color: color))
+        let textureView = UIImageView(image: texture)
+        
+        imageColored.addSubview(textureView)
+        
+        return takeSnapshotOfView(view: imageColored)
+        
+    }
     
+    func image() -> UIImage? {
+        
+        switch self.category {
+        case .shirt:
+            let coloredTexture = colorImageWithTexture(image: UIImage(named: self.category.rawValue + "Details")!, texture: UIImage(named: self.category.rawValue + "Texture")!, color: .white)
+            let coloredImage = colorImageWithTexture(image: UIImage(named: self.category.rawValue)!, texture: coloredTexture!, color: UIColor(hex: self.color.rawValue))
+            return coloredImage
+        case .dress:
+            let coloredImage = colorImageWithTexture(image: UIImage(named: (User.shared.genre?.rawValue)! + self.category.rawValue)!, texture: UIImage(named: (User.shared.genre?.rawValue)! + self.category.rawValue + "Texture")!, color: UIColor(hex: self.color.rawValue))
+            return coloredImage
+        default:
+            let coloredImage = colorImageWithTexture(image: UIImage(named: self.category.rawValue)!, texture: UIImage(named: self.category.rawValue + "Texture")!, color: UIColor(hex: self.color.rawValue))
+            return coloredImage
+        }
+        
+    }
     
-    
-    
+
     
 }
 
