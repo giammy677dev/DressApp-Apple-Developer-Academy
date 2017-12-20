@@ -39,9 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         content.badge = 1
         UIApplication.shared.applicationIconBadgeNumber = 0 //Set the badge notification to 0 when user opens the app
         
-        let request = UNNotificationRequest(
-            identifier: "yourIdentifier", content: content, trigger: trigger
-        )
+        let request = UNNotificationRequest(identifier: "yourIdentifier", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
         // <-------------------------------ONE-LIFE VIEW----------------------------->
