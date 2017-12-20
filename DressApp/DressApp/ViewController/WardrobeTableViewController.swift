@@ -48,7 +48,6 @@ class WardrobeTableViewController: UITableViewController {
         
         
         
-        
         // Configure the cell...
         switch indexPath.row {
         case 0:
