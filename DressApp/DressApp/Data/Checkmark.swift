@@ -44,7 +44,7 @@ open class SweetAlert: UIViewController {
     var imageView:UIImageView?
     var subTitleTextView = UITextView()
     var userAction:((_ isOtherButton: Bool) -> Void)? = nil
-    let kFont = "Helvetica"
+    let kFont = "Helvetica Neue"
     
     init() {
         super.init(nibName: nil, bundle: nil)

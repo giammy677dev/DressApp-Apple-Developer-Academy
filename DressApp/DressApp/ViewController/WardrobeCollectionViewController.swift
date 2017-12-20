@@ -12,8 +12,10 @@ private let reuseIdentifier = "Cell"
 
 class WardrobeCollectionViewController: UICollectionViewController {
     
-    var imgs: [String] = []
+    var imgs: [String] = ["Batman"]
     var segueID = "toAddClothe"
+    var segueInfoID = "toInfo"
+    
     var cellPushed: Int?
     var clothes: [Any] = []     //VETTORE DOVE METTERE I VESTITI(SE MAGLIETTE, PANTALONI ETC.)
     
@@ -29,6 +31,7 @@ class WardrobeCollectionViewController: UICollectionViewController {
 //        maglia.append(prova1)
 //        pantalone.append(provaPantalone)
         
+
         // Set the title of the views basing on the cell pushed in the previously table view
         if cellPushed == 0 {
             self.title = "T-Shirts"
@@ -62,6 +65,16 @@ class WardrobeCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    //    così se ruota a portrait aggiorna i layout
+    override func viewSafeAreaInsetsDidChange() {
+        //         UIDeviceOrientationIsLandscape(UIDevice.current.orientation){
+        collectionView?.reloadData()
+        
+    }
+    
+    
 //  PROVA SET UP ARRAY VESTITI COLLECTION. SI DEVONO CREARE I VETTORI DEI VARI VESTITI DA ASSOCIARE A TESTVECTOR
 //    func setUpDress(){
 //        if cellPushed == 0{
@@ -77,16 +90,6 @@ class WardrobeCollectionViewController: UICollectionViewController {
 //    }
     
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -124,43 +127,6 @@ class WardrobeCollectionViewController: UICollectionViewController {
     
         return cell
     }
-
-    
-    
-    
-    
-    
-    
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
 
@@ -200,15 +166,33 @@ class WardrobeCollectionViewController: UICollectionViewController {
             return collectionViewMargin
         }
 
+        
+        
+        
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == segueID {
-                if let addVC = segue.destination as?
-                    AddClothesTableViewController {
+                if let addVC = segue.destination as? AddClothesTableViewController {
+                    print ("ENTRATO")
                     if let x = cellPushed {
                         addVC.dressCategory = x
                     }
                 }
+            } else if segue.identifier == segueInfoID{
+                if let infoVC = segue.destination as? DressInfoTableViewController{
+                    if let x = cellPushed{
+                    infoVC.dressCategory = x
+                        print ("X:\(x)")
+                    }
+                    if let cellRowSelected =
+                        collectionView?.indexPathsForSelectedItems?.last?.row{
+                        infoVC.cellRowSelected = cellRowSelected
+                        print ("Elemento: \(cellRowSelected)")
+
+                    }
+
+                }
             }
         }
-    }
+        
+}
 

@@ -10,6 +10,7 @@
 		5C45744F1FE26C8D00FC2A55 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C45744E1FE26C8D00FC2A55 /* Today.storyboard */; };
 		5C4574511FE26CA800FC2A55 /* Wardrobe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */; };
 		5C4574551FE26D1400FC2A55 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4574541FE26D1400FC2A55 /* Me.storyboard */; };
+		5C56D2861FEAA11600507ADE /* DressInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56D2851FEAA11600507ADE /* DressInfoTableViewController.swift */; };
 		5C69B0121FE3CA570006C2E6 /* WardrobeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */; };
 		5C69B0141FE434120006C2E6 /* WardrobeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */; };
 		7B0705011FEAC4F400D5F944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0705001FEAC4F400D5F944 /* MapKit.framework */; };
@@ -40,6 +41,7 @@
 		5C45744E1FE26C8D00FC2A55 /* Today.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
 		5C4574501FE26CA800FC2A55 /* Wardrobe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wardrobe.storyboard; sourceTree = "<group>"; };
 		5C4574541FE26D1400FC2A55 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		5C56D2851FEAA11600507ADE /* DressInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DressInfoTableViewController.swift; sourceTree = "<group>"; };
 		5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionViewController.swift; sourceTree = "<group>"; };
 		5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B0705001FEAC4F400D5F944 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -136,6 +138,7 @@
 				B13097D51FE280460095C750 /* WardrobeTableViewController.swift */,
 				5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */,
 				5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */,
+				5C56D2851FEAA11600507ADE /* DressInfoTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04187B51FE13989007E5E83 /* Weather.swift in Sources */,
+				5C56D2861FEAA11600507ADE /* DressInfoTableViewController.swift in Sources */,
 				7B98D7DD1FE6EF4D0099CF27 /* Classes Extensions.swift in Sources */,
 				7B31D5AC1FE15F780038DA6E /* Clothes.swift in Sources */,
 				7B3FA32E1FEA799C00CB13E7 /* TodayViewController.swift in Sources */,
