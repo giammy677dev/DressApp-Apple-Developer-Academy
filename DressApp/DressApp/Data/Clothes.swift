@@ -81,9 +81,10 @@ class Cloth {
         
         imageColored.addSubview(textureView)
         
-        return takeSnapshotOfView(view: imageColored)
-        
+//        return takeSnapshotOfView(view: imageColored)
+        return UIImage(view: imageColored)
     }
+    
     
     func image() -> UIImage? {
         
