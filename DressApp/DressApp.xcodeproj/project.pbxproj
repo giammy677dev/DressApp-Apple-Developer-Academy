@@ -12,6 +12,7 @@
 		5C4574551FE26D1400FC2A55 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4574541FE26D1400FC2A55 /* Me.storyboard */; };
 		5C69B0121FE3CA570006C2E6 /* WardrobeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */; };
 		5C69B0141FE434120006C2E6 /* WardrobeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */; };
+		7B0705011FEAC4F400D5F944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0705001FEAC4F400D5F944 /* MapKit.framework */; };
 		7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A61FE15F780038DA6E /* Wardrobe.swift */; };
 		7B31D5AC1FE15F780038DA6E /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A71FE15F780038DA6E /* Clothes.swift */; };
 		7B31D5AD1FE15F780038DA6E /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31D5A81FE15F780038DA6E /* Enumerations.swift */; };
@@ -33,7 +34,6 @@
 		B1B1536B1FE3C80A00558A45 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */; };
 		B1EF195C1FE467190044D072 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF195B1FE467190044D072 /* SettingsTableViewController.swift */; };
 		E04187B51FE13989007E5E83 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B41FE13989007E5E83 /* Weather.swift */; };
-		E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04187B61FE13A85007E5E83 /* Geolocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +42,7 @@
 		5C4574541FE26D1400FC2A55 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		5C69B0111FE3CA570006C2E6 /* WardrobeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionViewController.swift; sourceTree = "<group>"; };
 		5C69B0131FE434120006C2E6 /* WardrobeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B0705001FEAC4F400D5F944 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7B31D5A61FE15F780038DA6E /* Wardrobe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wardrobe.swift; sourceTree = "<group>"; };
 		7B31D5A71FE15F780038DA6E /* Clothes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		7B31D5A81FE15F780038DA6E /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		B1B1536A1FE3C80A00558A45 /* CollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		B1EF195B1FE467190044D072 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E04187B41FE13989007E5E83 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		E04187B61FE13A85007E5E83 /* Geolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Geolocation.swift; path = DressApp/Utility/Geolocation.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,16 +73,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B0705011FEAC4F400D5F944 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B0704FF1FEAC4F400D5F944 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B0705001FEAC4F400D5F944 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7B1BA2761FE19068008351A5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				E04187B61FE13A85007E5E83 /* Geolocation.swift */,
 				E04187B41FE13989007E5E83 /* Weather.swift */,
 				7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */,
 				7B98D7DC1FE6EF4D0099CF27 /* Classes Extensions.swift */,
@@ -137,6 +145,7 @@
 			children = (
 				7B8DA5701FD98C54003E9785 /* DressApp */,
 				7B8DA56F1FD98C54003E9785 /* Products */,
+				7B0704FF1FEAC4F400D5F944 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +206,11 @@
 					7B8DA56D1FD98C54003E9785 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -258,7 +272,6 @@
 				7B502EC01FE43AB000C8D198 /* MeTableViewController.swift in Sources */,
 				B1EF195C1FE467190044D072 /* SettingsTableViewController.swift in Sources */,
 				B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */,
-				E04187B71FE13A85007E5E83 /* Geolocation.swift in Sources */,
 				7B31D5AD1FE15F780038DA6E /* Enumerations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

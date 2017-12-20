@@ -83,9 +83,9 @@ class User: Codable {
         
         switch self.genre {
         case .male?:
-            return UIImage(named: "Man Profile Pic")
+            return UIImage(named: "manProfilePic")
         case .female?:
-            return UIImage(named: "Woman Profile Pic")
+            return UIImage(named: "womanProfilePic")
         default:
             return nil
         }
@@ -95,9 +95,9 @@ class User: Codable {
     
 }
 
-enum UserGenre: Int, Codable {
-    case male = 0
-    case female
+enum UserGenre: String, Codable {
+    case male = "man"
+    case female = "woman"
     case other
     
     func string() -> String? {

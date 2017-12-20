@@ -12,12 +12,12 @@ import UIKit
 
 enum ClothCategory: String {
     
-    case trousers = "Trousers"
-    case tShirt = "T-Shirt"
-    case shirt = "Shirt"
-    case sweater = "Sweater"
-    case skirt = "Skirt"
-    case shoes = "Shoes"
+    case trousers = "trousers"
+    case tShirt = "tshirt"
+    case shirt = "shirt"
+    case sweater = "sweater"
+    case skirt = "skirt"
+    case shoes = "shoes"
     case dress = "Dress"
     
 }
