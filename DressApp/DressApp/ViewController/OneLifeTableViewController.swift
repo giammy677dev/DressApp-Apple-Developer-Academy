@@ -63,25 +63,25 @@ class OneLifeTableViewController: UITableViewController, UITextFieldDelegate {
     }
 
     @IBAction func changeUserName(_ sender: UITextField) {
-            User.shared.name = nameTextField.text
-            defaults.set(nameTextField.text, forKey: "username")
+//            User.shared.setUserInfo(genre: nil, bodyShape: nil, dateOfBirth: nil, name: nameTextField.text)
+//            User.shared.name = nameTextField.text
         }
     
     // End the one-life view forever
     @IBAction func acceptButtonTapped(_ sender: Any) {
         
-        var selectedGender: User.UserGenre {
+        var selectedGender: UserGenre {
             
             switch self.genreSegmentedControl.selectedSegmentIndex {
                 case 0:
-                    return User.UserGenre.male
+                    return .male
                 case 1:
-                    return User.UserGenre.female
-                default: return User.UserGenre.other
+                    return .female
+                default: return .other
                 }
         }
         
-        var selectedBodyShape: User.BodyShape {
+        var selectedBodyShape: BodyShape {
             
             if appleButton.isSelected {
                 return .apple
