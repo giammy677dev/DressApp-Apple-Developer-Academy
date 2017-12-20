@@ -8,31 +8,63 @@
 
 import UIKit
 
-class AddClothesTableViewController: UITableViewController {
-    @IBOutlet weak var colorPickedView: UIView!
+class AddClothesTableViewController: UITableViewController, UITextFieldDelegate {
+    
+    
     @IBOutlet weak var colorPickedLabel: UILabel!
     @IBOutlet weak var colorSelectionCell: UITableViewCell!
     @IBOutlet weak var pickerView: UIPickerView!
     
     var pickerElements: [String] = []
-    var tissues: [String] = ["Cotton", "Wool", "Cashmere"]
-    var colors: [String] = ["Black", "White", "Red", "Green" ]
-    var color: String = ""      //PROVA PER VEDERE SE STAMPA IL COLORE
-    var tissue: String = ""     //PROVA PER VEDERE SE STAMPA IL TESSUTO
-    var dressCategory: Int = 0
-    var categoryName: String = ""
+    var tissues: [String] = ["cotton", "wool", "cashmere", "synthetic", "jeans"]
+    var colors: [String] = ["black", "white", "navajoWhite","red", "blue","lightSkyBlue","navy","torchRed","saddleBrown","pink","silver","maroon","myrtle","indigo","putty","yellow"]
+    var tissue: Material = Material.cotton
+    var color: Color = Color.black
+
+    
+    var elegant: Bool = false
+    var sleeves: Model = Model.short
+    var sweaterType: SweaterModels = SweaterModels.pullover
+    var dressCategory: Int = 0      //SERVE PER CAPIRE COSA STAI AGGIUNGENDO. TE LO PASSA LA WARDROBECOLLECTION
+    
+    
+    @IBOutlet weak var modelLabel: UILabel!
+    
+    @IBOutlet weak var chosenColorLabel: UILabel!
+    
+    @IBOutlet weak var chosenMaterialLabel: UILabel!
+    
+    @IBOutlet weak var descriptionText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pickerView.delegate = self
+        
+        
+        descriptionText.delegate = self
+        
+        chosenColorLabel.text = ""
+        chosenMaterialLabel.text = ""
+        
         pickerView.dataSource = self
+        pickerView.delegate = self
+        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        if dressCategory == 0 || dressCategory == 1 {
+            modelLabel.text = "Short/Long Sleeves"
+        }
+        if dressCategory == 2{
+            modelLabel.text = "Pullover/Sweatshirt"
+        }
+        if dressCategory == 3{
+            
+        }
+        if dressCategory == 4{
+            modelLabel.text = "Short/Long"
+        }else{
+            //VESTITINI ETC BOH
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,105 +72,150 @@ class AddClothesTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //view.endEditing(true)             //O fai così
+        textField.resignFirstResponder()    //O fai così
+        
+        return true
+    }
+    
+    
+//    func labelsLayout(){
+//        chosenColorLabel.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        chosenColorLabel.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 35).isActive = true
+//    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            pickerElements = tissues
+            pickerElements = colors
             pickerView.reloadAllComponents()
             pickerView.isHidden = false
         } else if indexPath.row == 1{
-            pickerElements = colors
+            pickerElements = tissues
             pickerView.reloadAllComponents()
             pickerView.isHidden = false
         }else{
             //CON QUESTE DUE RIGHE, SE CLICCHI SULLA TABLE SPARISCE IL PICKER. FAI LE RIGHE PIU' ALTE CHE COSI' PRENDONO PIU' SPAZIO E VIENE MEGLIO L'EFFETTO VOLUTO.
             self.tableView.resignFirstResponder()
             pickerView.isHidden = true
+            }
         }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (dressCategory == 3 || dressCategory == 5 || dressCategory == 6) && indexPath.row == 2{
+            return 0
+        } else{
+             return super.tableView(tableView, heightForRowAt: indexPath)
         }
+        
+    }
+    
+    
+    @IBAction func modelSwitched(_ sender: UISwitch) {
+        if sender.isOn == true{
+            switch dressCategory{
+            case 0,1,3:                     //SE STAI AGGIUNGENDO UNA MAGLIA O UNA CAMICIA O UN VESTITO, CAMBI SLEEVES
+                sleeves = Model.long
+                print (sleeves)
+            case 2:                         //SE STAI AGGIUNGENDO UN MAGLIONE, MODIFICHI sweaterType
+                sweaterType = SweaterModels.sweatshirt
+            default:
+                break
+            }
+        }else if sender.isOn == false{      //QUA E' NEL CASO LO SWITCH SIA FALSO. RIPETI IL PROCEDIMENTO.
+            switch dressCategory{
+            case 0,1:
+                sleeves = Model.short
+            case 2:
+                sweaterType = SweaterModels.pullover
+                print (sweaterType)
+            default:
+                break
+            }   //AND SO ON...........
+    }
+}
+        
+    @IBAction func elegantSwitched(_ sender: UISwitch) {
+        if sender.isOn == true{
+            elegant = true
+        }else{
+            elegant = false
+    }
+}
     
     //BOTTONE SALVA
     @IBAction func saveClothe(_ sender: Any) {
         //A SECONDA DI COSA STO AGGIUNGENDO, CHIAMO LA FUNZIONE CHE SALVA QUELL'INDUMENTO
-        switch dressCategory {
+       
+        switch dressCategory{
         case 0:
-            //addTShirt()
-            categoryName = "T-Shirt"
-            break
+            addTShirt()
         case 1:
-            //addTShirt()
-            categoryName = "Shirt"
-            break
+            addShirt()
         case 2:
-            //addTShirt()
-            categoryName = "Sweater"
-            break
+            addSweater()
         case 3:
-            //addTShirt()
-            categoryName = "Dress"
-            break
+            addDress()
         case 4:
-            //addTShirt()
-            categoryName = "Trouser"
-            break
+            addTrousers()
         case 5:
-            //addTShirt()
-            categoryName = "Shoes"
-            break
+            addShoes()
         case 6:
-            //addTShirt()
-            categoryName = "Skirt"
-            break
+            addSkirts()
         default:
             break
         }
+        
         self.navigationController?.popViewController(animated: true)
         
-        //Set the checkmark alert when new cloth is succesfully saved
-        SweetAlert().showAlert("Saved succesfully!", subTitle: "\(categoryName) added to your wardrobe!", style: AlertStyle.success)
+        }
+    
+    func addTShirt(){           //VIENE CHIAMATA SE STAI AGGIUNGENDO UNA MAGLIETTA
+        
+        
+        _ = TShirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
+        
+        
+//        delegate?.getImage(image: "T-Shirt") //NON VA MESSO QUI, MA VA BEH, PER PROVA
+
+//
+//        if elegant == true{
+//            if sleeves == Model.long{
+//
+//            }
+//        }
+    }
+    
+    func addShirt(){
+        _ = Shirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
+        print ("Shirt data")
         
     }
     
-    
-//    func addTShirt(){           //VIENE CHIAMATA SE STAI AGGIUNGENDO UNA MAGLIETTA
-//
-//        let tShirt = TShirt(color: .black, material: .cotton, description: nil, elegant: true, model: .long)
-//
-//
-////        (color: color, material: tissue, description: nil, elegant: elegant, model: sleeves) //CREO UN OGGETTO MAGLIA CON LE CARATTERISTICHE SCELTE. DESCRIPTION PER ORA NON L'HO CAGATA.
-//
-//        Wardrobe.shared.add(cloth: tShirt)  //SE HO CAPITO BENE, QUESTA FUNZIONE DOVREBBE FARE UN APPEND NEL VETTORE DELLE T-SHIRT
-//
-////        //ORA DEVO FARE UNA SERIE DI IF PER CAPIRE CHE IMMAGINE AGGIUNGERE ALLA COLLECTION
-//
-//        if elegant == true {
-//            if sleeves == Model.short {
-////                //POI QUI DEVO VEDERE ANCHE DI CHE COLORE E' STA MAGLIETTA. MA HO ANCORA DEI DUBBI SU COME FAREMO STO CASPITO DI COLORE.
-//                                switch color{
-//                                case .black:
-////                                    ...
-//
-//                                delegate?.getImage(image: "Batman")       //QUESTO SERVE PER PASSARE L'IMG ALLA COLLECTION VIEW.
-//
-//            }
-//            else if sleeves == Model.long {
-//                //                STESSO PROCEDIMENTO CON COLORI
-//                //                delegate?.getImage(image: "Trouser")
-//            }
-//
-//        } else if elegant == false {
-//         if sleeves == Model.short{
-//                //                STESSO PROCEDIMENTO CON COLORI
-//                //                delegate?.getImage(image: "Batman")
-//
-//
-//            }
-//            else if sleeves == Model.long{
-//                //                STESSO PROCEDIMENTO CON COLORI
-//                //                delegate?.getImage(image: "Trouser")
-//            }
-//        }
-//    }
+    func addSweater(){
+        _ = Sweater(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sweaterType)
     }
+    
+    func addDress(){
+        _ = Dress(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+    }
+    
+    func addTrousers(){
+        _ = Trousers(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
+    }
+    
+    func addShoes(){
+        _ = Shoes(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+    }
+    
+    func addSkirts(){
+        _ = Skirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+    }
+    
+    
+}
 
 extension AddClothesTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -156,15 +233,68 @@ extension AddClothesTableViewController: UIPickerViewDataSource, UIPickerViewDel
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerElements == tissues{
-            tissue = pickerElements[row]        //METTO IL TESSUTO SCELTO IN TISSUE PER PROVA.
-        }else if pickerElements == colors{
-            color = pickerElements[row]         //METTO IL COLORE SCELTO IN COLOR PER PROVA
+        if pickerElements == colors{
+            switch self.pickerView.selectedRow(inComponent: 0){
+            case 0:
+                color = .black
+            case 1:
+                color = .white
+            case 2:
+                color = .navajoWhite
+            case 3:
+                color = .red
+            case 4:
+                color = .blue
+            case 5:
+                color = .lightSkyBlue
+            case 6:
+                color = .navy
+            case 7:
+                color = .torchRed
+            case 8:
+                color = .saddleBrown
+            case 9:
+                color = .pink
+            case 10:
+                color = .silver
+            case 11:
+                color = .maroon
+            case 12:
+                color = .myrtle
+            case 13:
+                color = .indigo
+            case 14:
+                color = .putty
+            case 15:
+                color = .yellow
+            default:
+                break
+            }
+            chosenColorLabel.text = pickerElements[row].description
+            
         }
-        print ("Tessuto: \(tissue)")            //STAMPO TISSUE E COLOR PER VEDERE SE FUNZIONA
-        print ("Colore: \(color)")
-        pickerView.isHidden = true
+        else if pickerElements == tissues{
+            switch self.pickerView.selectedRow(inComponent: 0){
+                
+            case 0:
+                tissue = .cotton
+            case 1:
+                tissue = .wool
+            case 2:
+                tissue = .cashmere
+            case 3:
+                tissue = .synthetic
+            case 4:
+                tissue = .jeans
+            default:
+                break
+            }
+            chosenMaterialLabel.text = pickerElements[row].description
+        }
+//        pickerView.isHidden = true
     }
+    
+    
 
 }
 
