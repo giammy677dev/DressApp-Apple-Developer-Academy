@@ -113,7 +113,13 @@ class WardrobeCollectionViewController: UICollectionViewController {
         // Configure the cell
         
         //AGGIUNGO L'IMG NELLA CELLA (clotheImage è stato instanziato nella collectionViewCell)
-        cell.clotheImage.image = UIImage(named: imgs[indexPath.row])
+        //cell.clotheImage.image = UIImage(named: imgs[indexPath.row])
+        
+        var maglia = TShirt(color: .indigo, material: .cashmere, description: nil, elegant: true, model: .long)
+        
+        cell.clotheImage.image = maglia.image()
+        
+        
         
 //        CONFIGURO L'IMG DEL VESTITO NELLA CELLA:
         cell.clotheImage.frame.size.width = cell.frame.size.width
