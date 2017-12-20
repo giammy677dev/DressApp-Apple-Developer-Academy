@@ -71,7 +71,7 @@ enum Color: UInt {
             
         case .black:
             switch with {
-                case .lightSkyBlue, .silver, .torchRed:
+                case .lightSkyBlue, .red, .torchRed:
                     return true
                 default:
                     return false
@@ -87,7 +87,7 @@ enum Color: UInt {
         
         case .navajoWhite:
             switch with {
-                case .white, .red, .saddleBrown:
+                case .black, .maroon, .saddleBrown:
                     return true
             default:
                 return false
@@ -95,7 +95,7 @@ enum Color: UInt {
             
         case .red:
             switch with {
-                case .white, .navajoWhite, .pink:
+                case .white, .navajoWhite, .navy:
                     return true
                 default:
                     return false
@@ -111,7 +111,7 @@ enum Color: UInt {
             
         case .lightSkyBlue:
             switch with {
-            case .black, .navajoWhite, .silver:
+            case .black, .navajoWhite, .pink:
                 return true
             default:
                 return false
@@ -127,7 +127,7 @@ enum Color: UInt {
             
         case .torchRed:
             switch with {
-            case .pink, .navajoWhite, .white:
+            case .navy, .navajoWhite, .white:
                 return true
             default:
                 return false
@@ -135,7 +135,7 @@ enum Color: UInt {
             
         case .saddleBrown:
             switch with {
-            case .putty, .navajoWhite, .red:
+            case .putty, .navajoWhite, .pink:
                 return true
             default:
                 return false
@@ -143,7 +143,7 @@ enum Color: UInt {
             
         case .pink:
             switch with {
-            case .lightSkyBlue, .navy, .black:
+            case .silver, .navy, .black:
                 return true
             default:
                 return false
@@ -151,7 +151,7 @@ enum Color: UInt {
             
         case .silver:
             switch with {
-            case .black, .pink, .lightSkyBlue:
+            case .navy, .pink, .lightSkyBlue:
                 return true
             default:
                 return false
@@ -159,7 +159,7 @@ enum Color: UInt {
             
         case .maroon:
             switch with {
-            case .pink, .navajoWhite, .black:
+            case .silver, .navajoWhite, .black:
                 return true
             default:
                 return false
@@ -175,7 +175,7 @@ enum Color: UInt {
             
         case .indigo:
             switch with {
-            case .pink, .white, .navajoWhite:
+            case .saddleBrown, .white, .navajoWhite:
                 return true
             default:
                 return false
@@ -191,7 +191,7 @@ enum Color: UInt {
             
         case .yellow:
             switch with {
-            case .torchRed, .putty, .maroon:
+            case .saddleBrown, .putty, .maroon:
                 return true
             default:
                 return false
