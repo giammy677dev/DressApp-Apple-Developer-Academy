@@ -12,10 +12,15 @@ class WardrobeTableViewController: UITableViewController {
     
     var segueID = "toCollection"
     var selectedRow: Int = 0
+    
 
     override func loadView() {
         super.loadView()
         self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,11 +36,15 @@ class WardrobeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //        switch (genre) {
-        //        case "male":
-        //        return 6
-        //        case "female":
+                switch (User.shared.genre) {
+                case .male?:
+                return 6
+                    
+                case .female?:
         return 7
+                default:
+                    return 0
+        }
     }
     
     //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -60,7 +69,7 @@ class WardrobeTableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Prova"
         case 2:
             cell.textLabel?.text = "Sweaters"
-            cell.imageView?.image = #imageLiteral(resourceName: "Maglione")
+            cell.imageView?.image = #imageLiteral(resourceName: "Sweater")
             cell.detailTextLabel?.text = "Prova"
         case 3:
             cell.textLabel?.text = "Dresses"
@@ -72,7 +81,7 @@ class WardrobeTableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Prova"
         case 5:
             cell.textLabel?.text = "Shoes"
-//            cell.imageView?.image =
+            cell.imageView?.image = #imageLiteral(resourceName: "Shoes")
             cell.detailTextLabel?.text = "Prova"
         case 6:
             cell.textLabel?.text = "Skirts"

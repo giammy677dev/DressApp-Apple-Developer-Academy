@@ -48,7 +48,7 @@ class OneLifeTableViewController: UITableViewController, UITextFieldDelegate {
         nameTextField.enablesReturnKeyAutomatically = true
         self.nameTextField.delegate = self
         datePicker.maximumDate = Date()
-        tableView.contentInsetAdjustmentBehavior = .always
+//        tableView.contentInsetAdjustmentBehavior = .always
         
     }
 
@@ -61,11 +61,6 @@ class OneLifeTableViewController: UITableViewController, UITextFieldDelegate {
         nameTextField.resignFirstResponder()
         return true
     }
-
-    @IBAction func changeUserName(_ sender: UITextField) {
-//            User.shared.setUserInfo(genre: nil, bodyShape: nil, dateOfBirth: nil, name: nameTextField.text)
-//            User.shared.name = nameTextField.text
-        }
     
     // End the one-life view forever
     @IBAction func acceptButtonTapped(_ sender: Any) {

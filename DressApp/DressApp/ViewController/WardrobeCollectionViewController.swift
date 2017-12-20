@@ -121,6 +121,7 @@ class WardrobeCollectionViewController: UICollectionViewController {
         
         
         
+        
 //        CONFIGURO L'IMG DEL VESTITO NELLA CELLA:
         cell.clotheImage.frame.size.width = cell.frame.size.width
         cell.clotheImage.frame.size.height = cell.frame.size.height
