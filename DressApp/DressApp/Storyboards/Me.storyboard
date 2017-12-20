@@ -295,7 +295,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1R3-Mj-GL5">
-                                                    <rect key="frame" x="110" y="47" width="101" height="65"/>
+                                                    <rect key="frame" x="137" y="46" width="101" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="pear"/>
                                                     <connections>
@@ -303,7 +303,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-re-tgo">
-                                                    <rect key="frame" x="227" y="47" width="94" height="64"/>
+                                                    <rect key="frame" x="265" y="47" width="94" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="timesand"/>
                                                     <connections>
