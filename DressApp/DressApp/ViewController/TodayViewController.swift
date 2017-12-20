@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import CoreLocation
 import MapKit
+import CoreLocation
+
 
 class TodayViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -17,12 +18,13 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var forecastLabel: UILabel!
 //    let manager = CLLocationManager()
-//
+//    
 //    @objc(locationManager:didFailWithError:)
 //    func locationManager(_ manager: CLLocationManager, didFailWithError error: NSError) {
 //        print(error.localizedDescription)
 //    }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let manager = CLLocationManager()
@@ -76,13 +78,7 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         
         
         
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations[0]
-//
-//        let latitude = location.coordinate.latitude
-//        let longitude = location.coordinate.longitude
-//        let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-//    }
+   
     
 
     /*
