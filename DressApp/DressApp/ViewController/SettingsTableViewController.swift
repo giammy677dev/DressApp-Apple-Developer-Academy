@@ -20,7 +20,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var timeSandButton: UIButton!
     
     var datePickerVisible: Bool = false
-    var dueDate = Date()
+    var dueDate: Date?
     var switchState: Bool = true
     
     override func viewDidLoad() {
@@ -136,6 +136,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
 
         User.shared.setUserInfo(genre: selectedGender, bodyShape: selectedBodyShape, dateOfBirth: dueDate, name: userNameTextField.text!)
         self.navigationController?.popViewController(animated: true)
+        SweetAlert().showAlert("Saved succesfully!", subTitle: "Your settings have been correctly updated!", style: AlertStyle.success)
     }
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {
@@ -145,7 +146,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     func updateDueDateLabel() {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-        dueDateLabel.text = formatter.string(from: dueDate)
+        dueDateLabel.text = formatter.string(from: dueDate!)
     }
     
     @IBAction func bodyShapeSet(_ sender: UIButton) {
