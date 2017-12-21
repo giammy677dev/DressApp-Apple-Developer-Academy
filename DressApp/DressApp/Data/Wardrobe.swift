@@ -24,6 +24,9 @@ class Wardrobe {
     private var shoes: [Shoes] = []
     private var dresses: [Dress] = []
     
+    public var chooseElegant: Bool = false
+    public var chooseCold: Bool = false
+    
     private var lastOutfits: [Outfit] = []
     /*
      For future updates: a user could save an outfit in a preferred outfits array
@@ -35,6 +38,19 @@ class Wardrobe {
             _ = lastOutfits.popLast()
         }
     }
+    
+    func getOutfit(elegant: Bool, cold: Bool) -> Outfit {
+        // Future update: matching algorithm between clothes
+        if elegant {
+            let chosen = dresses.popLast()
+            return Outfit(trousers: chosen?.matchedTrousers?.popLast(), tShirt: nil, shirt: chosen?.matchedShirts?.popLast(), sweater: nil, skirt: nil, shoes: chosen?.matchedShoes?.popLast(), dress: nil, image: nil)
+        } else {
+            let chosen = tShirts.popLast()
+            return Outfit(trousers: chosen?.matchedTrousers?.popLast(), tShirt: nil, shirt: nil, sweater: chosen?.matchedSweaters?.popLast(), skirt: nil, shoes: chosen?.matchedShoes?.popLast(), dress: nil, image: nil)
+        }
+        
+    }
+    
     
     func getLastOutfits() -> [Outfit] {
         return lastOutfits

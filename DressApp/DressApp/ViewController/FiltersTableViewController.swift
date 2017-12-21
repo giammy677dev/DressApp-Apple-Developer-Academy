@@ -10,11 +10,22 @@ import UIKit
 
 class FiltersTableViewController: UITableViewController {
     
+    @IBOutlet weak var elegantSwitch: UISwitch!
+    @IBOutlet weak var coldSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        elegantSwitch.isOn = Wardrobe.shared.chooseElegant
+        coldSwitch.isOn = Wardrobe.shared.chooseCold
     }
-
+    @IBAction func cold(_ sender: Any) {
+        Wardrobe.shared.chooseCold = !Wardrobe.shared.chooseCold
+    }
+    
+    @IBAction func elegant(_ sender: Any) {
+        Wardrobe.shared.chooseElegant = !Wardrobe.shared.chooseElegant
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -71,7 +71,7 @@ enum Color: UInt, Codable {
             
         case .black:
             switch with {
-                case .lightSkyBlue, .red, .torchRed:
+                case .lightSkyBlue, .red, .torchRed, .navajoWhite:
                     return true
                 default:
                     return false
@@ -103,7 +103,7 @@ enum Color: UInt, Codable {
             
         case .blue:
             switch with {
-            case .lightSkyBlue, .torchRed, .silver:
+            case .lightSkyBlue, .torchRed, .silver, .white:
                 return true
             default:
                 return false

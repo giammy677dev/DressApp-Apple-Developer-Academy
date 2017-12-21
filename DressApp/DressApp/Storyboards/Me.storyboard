@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uFA-eN-j6J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uFA-eN-j6J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -280,37 +281,43 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your body shape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4p-f5-PAJ">
-                                                    <rect key="frame" x="49" y="11" width="156" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="156" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUS-Yc-Z85">
-                                                    <rect key="frame" x="19" y="47" width="106" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="apple"/>
-                                                    <connections>
-                                                        <action selector="bodyShapeSet:" destination="6vX-ev-X7i" eventType="touchUpInside" id="qRt-YV-HLH"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1R3-Mj-GL5">
-                                                    <rect key="frame" x="137" y="46" width="101" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="pear"/>
-                                                    <connections>
-                                                        <action selector="bodyShapeSet:" destination="6vX-ev-X7i" eventType="touchUpInside" id="O4x-JK-vBn"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-re-tgo">
-                                                    <rect key="frame" x="265" y="47" width="94" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="timesand"/>
-                                                    <connections>
-                                                        <action selector="bodyShapeSet:" destination="6vX-ev-X7i" eventType="touchUpInside" id="CT8-eI-UPi"/>
-                                                    </connections>
-                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SQz-z3-mo1">
+                                                    <rect key="frame" x="37" y="40" width="301" height="65"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUS-Yc-Z85">
+                                                            <rect key="frame" x="0.0" y="0.5" width="106" height="64"/>
+                                                            <state key="normal" title="Button" image="apple"/>
+                                                            <connections>
+                                                                <action selector="bodyShapeSet:" destination="6vX-ev-X7i" eventType="touchUpInside" id="qRt-YV-HLH"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1R3-Mj-GL5">
+                                                            <rect key="frame" x="106" y="0.0" width="101" height="65"/>
+                                                            <state key="normal" title="Button" image="pear"/>
+                                                            <connections>
+                                                                <action selector="bodyShapeSet:" destination="6vX-ev-X7i" eventType="touchUpInside" id="O4x-JK-vBn"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-re-tgo">
+                                                            <rect key="frame" x="207" y="0.5" width="94" height="64"/>
+                                                            <state key="normal" title="Button" image="timesand"/>
+                                                            <connections>
+                                                                <action selector="bodyShapeSet:" destination="6vX-ev-X7i" eventType="touchUpInside" id="CT8-eI-UPi"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SQz-z3-mo1" secondAttribute="bottom" constant="5" id="1R6-2S-4wp"/>
+                                                <constraint firstItem="SQz-z3-mo1" firstAttribute="centerX" secondItem="rv0-PB-7Ad" secondAttribute="centerX" id="xyV-Sb-7vW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

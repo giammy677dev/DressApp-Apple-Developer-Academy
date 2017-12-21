@@ -62,37 +62,64 @@ class WardrobeTableViewController: UITableViewController {
         case 0:
             cell.textLabel?.text = "T-shirts"
             cell.imageView?.image = #imageLiteral(resourceName: "T-Shirt")
-            cell.detailTextLabel?.text = "Prova"
+            if Wardrobe.shared.getTShirts().count == 1 {
+            cell.detailTextLabel?.text = Wardrobe.shared.getTShirts().count.description + " element"
+            } else {
+                cell.detailTextLabel?.text = Wardrobe.shared.getTShirts().count.description + " elements"
+            }
         case 1:
             cell.textLabel?.text = "Shirts"
             cell.imageView?.image = #imageLiteral(resourceName: "Shirt")
-            cell.detailTextLabel?.text = "Prova"
+            if Wardrobe.shared.getShirts().count == 1 {
+                cell.detailTextLabel?.text = Wardrobe.shared.getShirts().count.description + " element"
+            } else {
+                cell.detailTextLabel?.text = Wardrobe.shared.getShirts().count.description + " elements"
+            }
         case 2:
             cell.textLabel?.text = "Sweaters"
             cell.imageView?.image = #imageLiteral(resourceName: "Sweater")
-            cell.detailTextLabel?.text = "Prova"
+            if Wardrobe.shared.getSweaters().count == 1 {
+                cell.detailTextLabel?.text = Wardrobe.shared.getSweaters().count.description + " element"
+            } else {
+                cell.detailTextLabel?.text = Wardrobe.shared.getSweaters().count.description + " elements"
+            }
         case 3:
             if User.shared.genre == .male {
                 cell.textLabel?.text = "Dresses"
                 cell.imageView?.image = #imageLiteral(resourceName: "Man Dress")
-                cell.detailTextLabel?.text = "Prova"
             } else {
                 cell.textLabel?.text = "Dresses"
                 cell.imageView?.image = #imageLiteral(resourceName: "Woman Dress")
-                cell.detailTextLabel?.text = "Prova"
+            }
+            if Wardrobe.shared.getDresses().count == 1 {
+                cell.detailTextLabel?.text = Wardrobe.shared.getDresses().count.description + " element"
+            } else {
+                cell.detailTextLabel?.text = Wardrobe.shared.getDresses().count.description + " elements"
             }
         case 4:
             cell.textLabel?.text = "Trousers"
             cell.imageView?.image = #imageLiteral(resourceName: "Trouser")
-            cell.detailTextLabel?.text = "Prova"
+            if Wardrobe.shared.getTrousers().count == 1 {
+                cell.detailTextLabel?.text = Wardrobe.shared.getTrousers().count.description + " element"
+            } else {
+                cell.detailTextLabel?.text = Wardrobe.shared.getTrousers().count.description + " elements"
+            }
         case 5:
             cell.textLabel?.text = "Shoes"
             cell.imageView?.image = #imageLiteral(resourceName: "Shoes")
-            cell.detailTextLabel?.text = "Prova"
+            if Wardrobe.shared.getShoes().count == 1 {
+                cell.detailTextLabel?.text = Wardrobe.shared.getShoes().count.description + " element"
+            } else {
+                cell.detailTextLabel?.text = Wardrobe.shared.getShoes().count.description + " elements"
+            }
         case 6:
             cell.textLabel?.text = "Skirts"
             cell.imageView?.image = #imageLiteral(resourceName: "Skirts")
-            cell.detailTextLabel?.text = "Prova"
+            if Wardrobe.shared.getSkirts().count == 1 {
+                cell.detailTextLabel?.text = Wardrobe.shared.getSkirts().count.description + " element"
+            } else {
+                cell.detailTextLabel?.text = Wardrobe.shared.getSkirts().count.description + " elements"
+            }
         default:
             cell.textLabel?.text = "Error! No category found!"
         }

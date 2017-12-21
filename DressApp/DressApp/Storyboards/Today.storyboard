@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Epu-lz-wHC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -83,14 +83,6 @@
                                     <constraint firstAttribute="height" constant="34" id="zlV-uh-K3g"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXq-E0-69t">
-                                <rect key="frame" x="284" y="557" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="jv2-9D-1Jo" kind="show" id="Jky-Ig-TRG"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-Hg-m9S">
                                 <rect key="frame" x="140" y="290" width="95" height="86"/>
                                 <constraints>
@@ -98,6 +90,13 @@
                                     <constraint firstAttribute="width" constant="95" id="pDl-X8-Z8t"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXq-E0-69t">
+                                <rect key="frame" x="152" y="558" width="60" height="30"/>
+                                <state key="normal" title="Filters"/>
+                                <connections>
+                                    <segue destination="jv2-9D-1Jo" kind="show" id="Jky-Ig-TRG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -113,6 +112,8 @@
                             <constraint firstItem="dIW-zy-LUz" firstAttribute="centerX" secondItem="4GV-Ea-4Vo" secondAttribute="centerX" id="EKz-qR-DMV"/>
                             <constraint firstItem="UXJ-UX-hmp" firstAttribute="bottom" secondItem="dIW-zy-LUz" secondAttribute="bottom" constant="-1.5" id="FIm-Hs-tCR"/>
                             <constraint firstItem="17a-rd-8hf" firstAttribute="top" secondItem="kD1-Lz-Alk" secondAttribute="top" constant="24" id="LZn-uv-Wtm"/>
+                            <constraint firstItem="kD1-Lz-Alk" firstAttribute="trailing" secondItem="TXq-E0-69t" secondAttribute="trailing" constant="163" id="LeH-jx-7Ty"/>
+                            <constraint firstItem="TXq-E0-69t" firstAttribute="leading" secondItem="kD1-Lz-Alk" secondAttribute="leading" constant="152" id="OO6-x0-Z36"/>
                             <constraint firstItem="kD1-Lz-Alk" firstAttribute="trailing" secondItem="17a-rd-8hf" secondAttribute="trailing" constant="16" id="RTn-sS-RRE"/>
                             <constraint firstItem="Oi0-Wk-Tcb" firstAttribute="leading" secondItem="kD1-Lz-Alk" secondAttribute="leading" constant="137" id="atk-Wj-9f0"/>
                             <constraint firstItem="Vsn-Hg-m9S" firstAttribute="leading" secondItem="kD1-Lz-Alk" secondAttribute="leading" constant="140" id="cpW-Uy-wUW"/>
@@ -121,6 +122,7 @@
                             <constraint firstItem="kD1-Lz-Alk" firstAttribute="bottom" secondItem="Bp2-5t-Px7" secondAttribute="bottom" constant="184" id="fc3-4a-8wZ"/>
                             <constraint firstItem="Oi0-Wk-Tcb" firstAttribute="top" secondItem="3w3-Qt-Odo" secondAttribute="bottom" constant="157.5" id="ggk-OL-NfP"/>
                             <constraint firstItem="kD1-Lz-Alk" firstAttribute="trailing" secondItem="Oi0-Wk-Tcb" secondAttribute="trailing" constant="138" id="hNH-uJ-2IX"/>
+                            <constraint firstItem="kD1-Lz-Alk" firstAttribute="bottom" secondItem="TXq-E0-69t" secondAttribute="bottom" constant="30" id="lEU-ZK-UeX"/>
                             <constraint firstItem="3w3-Qt-Odo" firstAttribute="leading" secondItem="kD1-Lz-Alk" secondAttribute="leading" constant="16" id="lYu-Q8-gMi"/>
                             <constraint firstItem="UXJ-UX-hmp" firstAttribute="top" secondItem="Vsn-Hg-m9S" secondAttribute="bottom" constant="47" id="lfa-Fk-joQ"/>
                             <constraint firstItem="dIW-zy-LUz" firstAttribute="centerY" secondItem="4GV-Ea-4Vo" secondAttribute="centerY" id="rUl-FI-ACx"/>
@@ -149,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="-26.399999999999999" y="-367.46626686656674"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Filters Table View Controller-->
         <scene sceneID="lxs-l5-7Va">
             <objects>
-                <tableViewController id="jv2-9D-1Jo" sceneMemberID="viewController">
+                <tableViewController id="jv2-9D-1Jo" customClass="FiltersTableViewController" customModule="DressApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EIV-Ry-9kh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,8 +169,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zio-dt-3QJ">
-                                                    <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Elegant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zio-dt-3QJ">
+                                                    <rect key="frame" x="16" y="11" width="84" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -177,6 +179,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="teT-1f-fIo">
                                                     <rect key="frame" x="310" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="elegant:" destination="jv2-9D-1Jo" eventType="valueChanged" id="dBZ-4Z-z75"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -188,8 +193,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVh-7c-D2Z">
-                                                    <rect key="frame" x="16" y="12" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVh-7c-D2Z">
+                                                    <rect key="frame" x="16" y="12" width="82" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -198,6 +203,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yVa-jt-izU">
                                                     <rect key="frame" x="310" y="7" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="cold:" destination="jv2-9D-1Jo" eventType="valueChanged" id="1n7-ZQ-ajE"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -211,8 +219,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dz4-24-Plj">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="KGF-4b-KfZ"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="KGF-4b-KfZ">
+                            <connections>
+                                <action selector="saveFilters:" destination="jv2-9D-1Jo" id="Wyu-51-5gR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="coldSwitch" destination="yVa-jt-izU" id="wdD-1s-LdN"/>
+                        <outlet property="elegantSwitch" destination="teT-1f-fIo" id="SEc-X5-IZs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvn-KM-iKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

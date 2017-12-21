@@ -30,6 +30,8 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
     var fahrenheit : Float?
     var latitude: String?
     var longitude : String?
+    var elegant: Bool = Wardrobe.shared.chooseElegant
+    var cold: Bool = Wardrobe.shared.chooseCold
     
     var icons: [String : UIImage] = ["clear-day": #imageLiteral(resourceName: "sun"), "clear-night": #imageLiteral(resourceName: "moon"), "rain": #imageLiteral(resourceName: "rain"), "snow": #imageLiteral(resourceName: "snow"), "sleet": #imageLiteral(resourceName: "rain"), "wind": #imageLiteral(resourceName: "cloudy"), "fog": #imageLiteral(resourceName: "clouds"), "cloudy": #imageLiteral(resourceName: "clouds"), "partly-cloudy-day": #imageLiteral(resourceName: "cloudy"), "partly-cloudy-night": #imageLiteral(resourceName: "cloudy moon")]
     
@@ -49,15 +51,31 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         
-        
-        shirtImageView.image = Shirt(color: .white, material: .cotton, description: nil, elegant: true, model: .long).image()
-        
-        
-        
+//        var dailyOutfit = Wardrobe.shared.getOutfit(elegant: false, cold: false)
+       
         }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        elegant = Wardrobe.shared.chooseElegant
+        cold = Wardrobe.shared.chooseCold
+        
+        if elegant {
+            shirtImageView.image = Shirt(color: Color.white, material: Material.cotton, description: "White shirt", elegant: true, model: Model.long).image()
+            dressImageView.image = Dress(color: Color.blue, material: Material.cotton, description: "Dark dress", elegant: true).image()
+            shoesImageView.image = Shoes(color: Color.blue, material: .cotton, description: "elegant shoes", elegant: true).image()
+            trousersImageView.image = Trousers(color: Color.blue, material: Material.cotton, description: "", elegant: true, model: Model.long).image()
+        } else {
+            trousersImageView.image = Trousers(color: Color.black, material: Material.cotton, description: "Black pants bought on 12/12/17", elegant: true, model: Model.long).image()
+            shirtImageView.image = Shirt(color: Color.white, material: Material.cotton, description: "White shirt", elegant: true, model: Model.long).image()
+            shoesImageView.image = Shoes(color: Color.red, material: Material.cotton, description: "Converse", elegant: false).image()
+        }
+        if cold {
+            shoesImageView.image = Shoes(color: Color.saddleBrown, material: Material.cotton, description: "", elegant: false).image()
+            trousersImageView.image = Trousers(color: Color.indigo, material: Material.wool, description: "", elegant: true, model: Model.long).image()
+            shirtImageView.image = Sweater(color: Color.putty, material: Material.cashmere, description: "", elegant: false, model: SweaterModels.pullover).image()
+        }
+        
         
         var myPosition: String = ""
         if let loc = manager.location {
