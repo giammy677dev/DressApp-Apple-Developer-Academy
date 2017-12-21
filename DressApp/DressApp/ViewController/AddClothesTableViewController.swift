@@ -8,8 +8,21 @@
 
 import UIKit
 
+//This delegate passes the clothe that the user adds to WardrobeCollectionViewController, in way to add a new image that represents this new clothe.
+
+protocol GetImageDelegate: class {
+    func didChooseTShirtImage(tShirt: TShirt)
+    func didChooseShirtImage(shirt: Shirt)
+    func didChooseSweaterImage(sweater: Sweater)
+    func didChooseDress(dress: Dress)
+    func didChooseTrousers(trousers: Trousers)
+    func didChooseShoes(shoes: Shoes)
+    func didChooseSkirt(skirt: Skirt)
+}
+
 class AddClothesTableViewController: UITableViewController, UITextFieldDelegate {
     
+    weak var getImageDelegate: GetImageDelegate?
     
     @IBOutlet weak var colorPickedLabel: UILabel!
     @IBOutlet weak var colorSelectionCell: UITableViewCell!
@@ -24,7 +37,7 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
     var elegant: Bool = false
     var sleeves: Model = Model.short
     var sweaterType: SweaterModels = SweaterModels.pullover
-    var dressCategory: Int = 0      //SERVE PER CAPIRE COSA STAI AGGIUNGENDO. TE LO PASSA LA WARDROBECOLLECTION
+    var dressCategory: Int = 0      //This is necessary to understand what the user is adding. It's given by WardrobeCollectionViewController
     
     
     @IBOutlet weak var modelLabel: UILabel!
@@ -38,16 +51,28 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descriptionText.enablesReturnKeyAutomatically = true
-        descriptionText.delegate = self
-        
+        descriptionText.text = ""
         chosenColorLabel.text = ""
         chosenMaterialLabel.text = ""
+        
+        descriptionText.enablesReturnKeyAutomatically = true
+        descriptionText.delegate = self
         
         pickerView.dataSource = self
         pickerView.delegate = self
         
+        setUpLabels()
+        
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func setUpLabels(){
+        
         if dressCategory == 0 || dressCategory == 1 {
             modelLabel.text = "Short/Long Sleeves"
         }
@@ -59,20 +84,12 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
         }
         if dressCategory == 4{
             modelLabel.text = "Short/Long"
-        }else{
-            //VESTITINI ETC BOH
         }
-
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        view.endEditing(true)             //O fai così
-        descriptionText.resignFirstResponder()    //O fai così
+        descriptionText.resignFirstResponder()
         return true
     }
     
@@ -87,7 +104,6 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
             pickerView.reloadAllComponents()
             pickerView.isHidden = false
         }else{
-            //CON QUESTE DUE RIGHE, SE CLICCHI SULLA TABLE SPARISCE IL PICKER. FAI LE RIGHE PIU' ALTE CHE COSI' PRENDONO PIU' SPAZIO E VIENE MEGLIO L'EFFETTO VOLUTO.
             self.tableView.resignFirstResponder()
             if self.descriptionText.isEditing == true {
                 self.pickerView.isHidden = true
@@ -127,22 +143,23 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
                 print (sweaterType)
             default:
                 break
-            }   //AND SO ON...........
+            }
+        }
     }
-}
         
     @IBAction func elegantSwitched(_ sender: UISwitch) {
         if sender.isOn == true{
             elegant = true
         }else{
             elegant = false
+        }
     }
-}
     
-    //BOTTONE SALVA
+    
     @IBAction func saveClothe(_ sender: Any) {
-        //A SECONDA DI COSA STO AGGIUNGENDO, CHIAMO LA FUNZIONE CHE SALVA QUELL'INDUMENTO
-       
+        
+        //Depending on the type of dress, the switch calls the appropriate function
+        
         switch dressCategory{
         case 0:
             addTShirt()
@@ -164,51 +181,55 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
         
         self.navigationController?.popViewController(animated: true)
         
-        }
+    }
     
-    func addTShirt(){           //VIENE CHIAMATA SE STAI AGGIUNGENDO UNA MAGLIETTA
+    
+    func addTShirt(){
         
-        
-        _ = TShirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
-        
-        
-//        delegate?.getImage(image: "T-Shirt") //NON VA MESSO QUI, MA VA BEH, PER PROVA
+        let newTShirt = TShirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
+        getImageDelegate?.didChooseTShirtImage(tShirt: newTShirt)
 
-//
-//        if elegant == true{
-//            if sleeves == Model.long{
-//
-//            }
-//        }
     }
     
     func addShirt(){
-        _ = Shirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
+        let newShirt = Shirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
+        getImageDelegate?.didChooseShirtImage(shirt: newShirt)
         
     }
     
     func addSweater(){
-        _ = Sweater(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sweaterType)
+        let newSweater = Sweater(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sweaterType)
+        getImageDelegate?.didChooseSweaterImage(sweater: newSweater)
+        
     }
     
     func addDress(){
-        _ = Dress(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+        let newDress = Dress(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+        getImageDelegate?.didChooseDress(dress: newDress)
+        
     }
     
     func addTrousers(){
-        _ = Trousers(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
+        let newTrousers = Trousers(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
+        getImageDelegate?.didChooseTrousers(trousers: newTrousers)
+        
+        
     }
     
     func addShoes(){
-        _ = Shoes(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+        let newShoes = Shoes(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+        getImageDelegate?.didChooseShoes(shoes: newShoes)
+        
     }
     
     func addSkirts(){
-        _ = Skirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+        let newSkirt = Skirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant)
+        getImageDelegate?.didChooseSkirt(skirt: newSkirt)
     }
     
     
 }
+
 
 extension AddClothesTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -286,7 +307,6 @@ extension AddClothesTableViewController: UIPickerViewDataSource, UIPickerViewDel
         }
 //        pickerView.isHidden = true
     }
-    
     
 
 }

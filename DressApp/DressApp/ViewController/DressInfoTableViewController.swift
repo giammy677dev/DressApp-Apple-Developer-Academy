@@ -8,8 +8,11 @@
 
 import UIKit
 
-class DressInfoTableViewController: UITableViewController {
 
+
+class DressInfoTableViewController: UITableViewController{
+   
+    
     var tShirtWardrobe = Wardrobe.shared.getTShirts()
     var shirtWardrobe = Wardrobe.shared.getShirts()
     var sweaterWardrobe = Wardrobe.shared.getSweaters()
@@ -97,6 +100,8 @@ class DressInfoTableViewController: UITableViewController {
         chosenDescriptionLabel.text = String(describing: tShirtWardrobe[cellRowSelected].description!)
         chosenElegantLabel.text = String(describing: tShirtWardrobe[cellRowSelected].isElegant)
         chosenModelLabel.text = String(describing: tShirtWardrobe[cellRowSelected].sleeves)
+        
+        print (chosenDescriptionLabel.text)
     }
 
 
@@ -148,7 +153,7 @@ class DressInfoTableViewController: UITableViewController {
         chosenElegantLabel.text = String(describing: skirtsWardrobe[cellRowSelected].isElegant)
     }
     
-    
+   
     
     // MARK: - Table view data source
 
