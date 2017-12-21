@@ -28,6 +28,8 @@
 		7B98D7DD1FE6EF4D0099CF27 /* Classes Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98D7DC1FE6EF4D0099CF27 /* Classes Extensions.swift */; };
 		7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */; };
 		B13097D61FE280460095C750 /* WardrobeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13097D51FE280460095C750 /* WardrobeTableViewController.swift */; };
+		B13839EE1FEB269F0023E372 /* LastOutfitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13839ED1FEB269F0023E372 /* LastOutfitTableViewController.swift */; };
+		B13839F01FEB2FA70023E372 /* FiltersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13839EF1FEB2FA70023E372 /* FiltersTableViewController.swift */; };
 		B13D76B61FE7D38800DC0023 /* Add Clothes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13D76B51FE7D38800DC0023 /* Add Clothes.storyboard */; };
 		B13D76B81FE7D56000DC0023 /* AddClothesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13D76B71FE7D56000DC0023 /* AddClothesTableViewController.swift */; };
 		B17CDC6B1FE851FD007A474A /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CDC6A1FE851FD007A474A /* Checkmark.swift */; };
@@ -61,6 +63,8 @@
 		7B98D7DC1FE6EF4D0099CF27 /* Classes Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classes Extensions.swift"; sourceTree = "<group>"; };
 		7BEF79571FE3CE6C009901FE /* AvatarImageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AvatarImageContext.swift; path = DressApp/Utility/AvatarImageContext.swift; sourceTree = SOURCE_ROOT; };
 		B13097D51FE280460095C750 /* WardrobeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTableViewController.swift; sourceTree = "<group>"; };
+		B13839ED1FEB269F0023E372 /* LastOutfitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOutfitTableViewController.swift; sourceTree = "<group>"; };
+		B13839EF1FEB2FA70023E372 /* FiltersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewController.swift; sourceTree = "<group>"; };
 		B13D76B51FE7D38800DC0023 /* Add Clothes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Add Clothes.storyboard"; sourceTree = "<group>"; };
 		B13D76B71FE7D56000DC0023 /* AddClothesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesTableViewController.swift; sourceTree = "<group>"; };
 		B17CDC6A1FE851FD007A474A /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		7B7DCD7C1FD997110024F2B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B13839EF1FEB2FA70023E372 /* FiltersTableViewController.swift */,
+				B13839ED1FEB269F0023E372 /* LastOutfitTableViewController.swift */,
 				7B3FA32D1FEA799C00CB13E7 /* TodayViewController.swift */,
 				B17CDC6C1FE85EC9007A474A /* OneLifeTableViewController.swift */,
 				B13D76B71FE7D56000DC0023 /* AddClothesTableViewController.swift */,
@@ -267,9 +273,11 @@
 				7BEF79581FE3CE6C009901FE /* AvatarImageContext.swift in Sources */,
 				7B8DA5721FD98C54003E9785 /* AppDelegate.swift in Sources */,
 				B17CDC6D1FE85EC9007A474A /* OneLifeTableViewController.swift in Sources */,
+				B13839F01FEB2FA70023E372 /* FiltersTableViewController.swift in Sources */,
 				B17CDC6B1FE851FD007A474A /* Checkmark.swift in Sources */,
 				7B31D5AB1FE15F780038DA6E /* Wardrobe.swift in Sources */,
 				7B81F9E51FE2A4B900C29D53 /* User.swift in Sources */,
+				B13839EE1FEB269F0023E372 /* LastOutfitTableViewController.swift in Sources */,
 				7B81F9E61FE2A4B900C29D53 /* Outfit.swift in Sources */,
 				5C69B0141FE434120006C2E6 /* WardrobeCollectionViewCell.swift in Sources */,
 				5C69B0121FE3CA570006C2E6 /* WardrobeCollectionViewController.swift in Sources */,
