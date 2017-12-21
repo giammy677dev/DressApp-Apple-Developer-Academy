@@ -12,7 +12,9 @@ class Wardrobe {
     
     static let shared = Wardrobe()  //Wardrobe singleton used in Wardrobe section (see Storyboard)
     
-    private init() {}
+    private init() {
+//        load()
+    }
     
     private var trousers: [Trousers] = []
     private var tShirts: [TShirt] = []
@@ -26,6 +28,7 @@ class Wardrobe {
     /*
      For future updates: a user could save an outfit in a preferred outfits array
      */
+    
     func addToLastOutfits(outfit: Outfit) {
         lastOutfits.insert(outfit, at: 0)
         if lastOutfits.count > 7 {
@@ -36,6 +39,42 @@ class Wardrobe {
     func getLastOutfits() -> [Outfit] {
         return lastOutfits
     }
+    
+//    func save() {
+//        let jsonEncoder = JSONEncoder()
+//        if let savedData = try? jsonEncoder.encode(Wardrobe.shared) {
+//            let defaults = UserDefaults.standard
+//            defaults.set(savedData, forKey: "sharedWardrobe")
+//        } else {
+//            print("Failed to save data.")
+//        }
+//        print("Saved")
+//    }
+    
+//    func load() {
+//
+//        let defaults = UserDefaults.standard
+//
+//        if let savedData = defaults.object(forKey: "sharedWardrobe") as? Data {
+//            let jsonDecoder = JSONDecoder()
+//
+//            do {
+//                let savedWardrobe = try jsonDecoder.decode(Wardrobe.self, from: savedData)
+//                self.trousers = savedWardrobe.trousers
+//                self.tShirts = savedWardrobe.tShirts
+//                self.shirts = savedWardrobe.shirts
+//                self.sweaters = savedWardrobe.sweaters
+//                self.skirts = savedWardrobe.skirts
+//                self.shoes = savedWardrobe.shoes
+//                self.dresses = savedWardrobe.dresses
+//                self.lastOutfits = savedWardrobe.lastOutfits
+//            } catch {
+//                print("Failed to load data.")
+//            }
+//
+//
+//        }
+//    }
     
     func add<C: Cloth>(cloth: C) {
         /*
@@ -61,8 +100,6 @@ class Wardrobe {
         }
     }
     
-    
-    
     func match<C: Cloth>(cloth: C, category: ClothCategory) -> [Any]? {
         /*
          Every cloth added to the wardrobe should have a collection of matched clothes. To find clothes that match that cloth, a
@@ -79,7 +116,7 @@ class Wardrobe {
             
             case .dress:
                 for dress in dresses {
-                    if dress.matches(with: cloth) {
+                    if dress.matches(cloth) {
                         guard let _ = clothesMatched else {
                             clothesMatched = [Dress]()
                             continue
@@ -90,7 +127,7 @@ class Wardrobe {
             
             case .shirt:
                 for shirt in shirts {
-                    if shirt.matches(with: cloth) {
+                    if shirt.matches(cloth) {
                         guard let _ = clothesMatched else {
                             clothesMatched = [Shirt]()
                             continue
@@ -101,7 +138,7 @@ class Wardrobe {
             
             case .shoes:
                 for item in shoes {
-                    if item.matches(with: cloth) {
+                    if item.matches(cloth) {
                         guard let _ = clothesMatched else {
                             clothesMatched = [Shoes]()
                             continue
@@ -112,7 +149,7 @@ class Wardrobe {
             
             case .skirt:
                 for skirt in skirts {
-                    if skirt.matches(with: cloth) {
+                    if skirt.matches(cloth) {
                         guard let _ = clothesMatched else {
                             clothesMatched = [Skirt]()
                             continue
@@ -123,7 +160,7 @@ class Wardrobe {
             
             case .sweater:
                 for sweater in sweaters {
-                    if sweater.matches(with: cloth) {
+                    if sweater.matches(cloth) {
                         guard let _ = clothesMatched else {
                             clothesMatched = [Sweater]()
                             continue
@@ -134,7 +171,7 @@ class Wardrobe {
             
             case .trousers:
                 for item in trousers {
-                    if item.matches(with: cloth) {
+                    if item.matches(cloth) {
                         guard let _ = clothesMatched else {
                             clothesMatched = [Trousers]()
                             continue
@@ -145,7 +182,7 @@ class Wardrobe {
             
             case .tShirt:
                 for tShirt in tShirts {
-                    if tShirt.matches(with: cloth) {
+                    if tShirt.matches(cloth) {
                         guard let _ = clothesMatched else {
                             clothesMatched = [TShirt]()
                             continue

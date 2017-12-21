@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-enum ClothCategory: String {
+enum ClothCategory: String, Codable {
     
     case trousers = "trousers"
     case tShirt = "tshirt"
@@ -22,7 +22,7 @@ enum ClothCategory: String {
     
 }
 
-enum Material: String {
+enum Material: String, Codable {
     case cotton = "Cotton"
     case wool = "Wool"
     case cashmere = "Cashmere"
@@ -30,17 +30,17 @@ enum Material: String {
     case jeans = "Jeans"
 }
 
-enum SweaterModels: String {
+enum SweaterModels: String, Codable {
     case sweatshirt = "Sweatshirt"
     case pullover = "Pullover"
 }
 
-enum Model: String {
+enum Model: String, Codable {
     case long = "Long"
     case short = "Short"
 }
 
-enum Color: UInt {
+enum Color: UInt, Codable {
     
     case black          =   0x000000
     case white          =   0xFFFFFF
@@ -65,7 +65,7 @@ enum Color: UInt {
         
     }
     
-    func match(with: Color) -> Bool {
+    func match(_ with: Color) -> Bool {
         
         switch self {
             
@@ -200,9 +200,5 @@ enum Color: UInt {
         }
         
     }
-    
-    
-    
-    
     
 }
