@@ -19,7 +19,7 @@ class Outfit {
     let shoes: Shoes?
     let dress: Dress?
     
-    let imageAvatar: UIImage?
+    var imageAvatar: UIImage?
     
     init(trousers: Trousers?, tShirt: TShirt?, shirt: Shirt?, sweater: Sweater?, skirt: Skirt?, shoes: Shoes?, dress: Dress?, image: UIImage?) {
         self.trousers = trousers
@@ -30,7 +30,15 @@ class Outfit {
         self.shoes = shoes
         self.dress = dress
         
-        self.imageAvatar = image
+//      Here goes the UIImage of the dressed avatar
+        self.imageAvatar = dressedAvatar(with: self)
+        
     }
     
+    
+    
 }
+
+
+
+

@@ -13,7 +13,7 @@ class WardrobeTableViewController: UITableViewController {
     var segueID = "toCollection"
     var selectedRow: Int = 0
     
-
+    
     override func loadView() {
         super.loadView()
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -36,14 +36,14 @@ class WardrobeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-                switch (User.shared.genre) {
-                case .male?:
-                return 6
-                    
-                case .female?:
-        return 7
-                default:
-                    return 0
+        switch (User.shared.genre) {
+        case .male?:
+            return 6
+            
+        case .female?:
+            return 7
+        default:
+            return 0
         }
     }
     
@@ -65,16 +65,22 @@ class WardrobeTableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Prova"
         case 1:
             cell.textLabel?.text = "Shirts"
-                        cell.imageView?.image = #imageLiteral(resourceName: "Shirt")
+            cell.imageView?.image = #imageLiteral(resourceName: "Shirt")
             cell.detailTextLabel?.text = "Prova"
         case 2:
             cell.textLabel?.text = "Sweaters"
             cell.imageView?.image = #imageLiteral(resourceName: "Sweater")
             cell.detailTextLabel?.text = "Prova"
         case 3:
-            cell.textLabel?.text = "Dresses"
-            cell.imageView?.image = #imageLiteral(resourceName: "Man Dress")
-            cell.detailTextLabel?.text = "Prova"
+            if User.shared.genre == .male {
+                cell.textLabel?.text = "Dresses"
+                cell.imageView?.image = #imageLiteral(resourceName: "Man Dress")
+                cell.detailTextLabel?.text = "Prova"
+            } else {
+                cell.textLabel?.text = "Dresses"
+                cell.imageView?.image = #imageLiteral(resourceName: "Woman Dress")
+                cell.detailTextLabel?.text = "Prova"
+            }
         case 4:
             cell.textLabel?.text = "Trousers"
             cell.imageView?.image = #imageLiteral(resourceName: "Trouser")

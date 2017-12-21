@@ -36,6 +36,17 @@ class Cloth {
     var matchedShoes: [Shoes]?
     var matchedDresses: [Dress]?
     
+//    func save() {
+//        let jsonEncoder = JSONEncoder()
+//        if let savedData = try? jsonEncoder.encode(self) {
+//            let defaults = UserDefaults.standard
+//            defaults.set(savedData, forKey: "sharedUserInfo")
+//        } else {
+//            print("Failed to save data.")
+//        }
+//        print("Saved")
+//    }
+//    
     private func askWardrobeForMatchedClothes() {
         
         matchedTrousers = Wardrobe.shared.match(cloth: self, category: .trousers) as? [Trousers]
@@ -48,9 +59,9 @@ class Cloth {
         
     }
     
-    func matches(with: Cloth) -> Bool {
+    func matches(_ with: Cloth) -> Bool {
         
-        if true {
+        if (self.color.match(with.color) || with.color.match(self.color)) {
         
             switch with.category {
                 case .dress:
@@ -69,8 +80,9 @@ class Cloth {
                     matchedTShirts?.append(with as! TShirt)
             }
             return true
-            
+        
         }
+        return false
 
     }
     
