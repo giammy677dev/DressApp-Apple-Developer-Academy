@@ -20,7 +20,6 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
     var colors: [String] = ["black", "white", "navajoWhite","red", "blue","lightSkyBlue","navy","torchRed","saddleBrown","pink","silver","maroon","myrtle","indigo","putty","yellow"]
     var tissue: Material = Material.cotton
     var color: Color = Color.black
-
     
     var elegant: Bool = false
     var sleeves: Model = Model.short
@@ -39,8 +38,7 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        descriptionText.enablesReturnKeyAutomatically = true
         descriptionText.delegate = self
         
         chosenColorLabel.text = ""
@@ -73,18 +71,11 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //view.endEditing(true)             //O fai così
-        textField.resignFirstResponder()    //O fai così
-        
+//        view.endEditing(true)             //O fai così
+        descriptionText.resignFirstResponder()    //O fai così
         return true
     }
     
-    
-//    func labelsLayout(){
-//        chosenColorLabel.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        chosenColorLabel.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 35).isActive = true
-//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
@@ -98,8 +89,12 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
         }else{
             //CON QUESTE DUE RIGHE, SE CLICCHI SULLA TABLE SPARISCE IL PICKER. FAI LE RIGHE PIU' ALTE CHE COSI' PRENDONO PIU' SPAZIO E VIENE MEGLIO L'EFFETTO VOLUTO.
             self.tableView.resignFirstResponder()
+            if self.descriptionText.isEditing == true {
+                self.pickerView.isHidden = true
+            }
             pickerView.isHidden = true
             }
+        self.view.endEditing(true)
         }
     
     
@@ -116,9 +111,8 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
     @IBAction func modelSwitched(_ sender: UISwitch) {
         if sender.isOn == true{
             switch dressCategory{
-            case 0,1,3:                     //SE STAI AGGIUNGENDO UNA MAGLIA O UNA CAMICIA O UN VESTITO, CAMBI SLEEVES
+            case 0,1,4:                     //SE STAI AGGIUNGENDO UNA MAGLIA O UNA CAMICIA O UN VESTITO, CAMBI SLEEVES
                 sleeves = Model.long
-                print (sleeves)
             case 2:                         //SE STAI AGGIUNGENDO UN MAGLIONE, MODIFICHI sweaterType
                 sweaterType = SweaterModels.sweatshirt
             default:
@@ -126,7 +120,7 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
             }
         }else if sender.isOn == false{      //QUA E' NEL CASO LO SWITCH SIA FALSO. RIPETI IL PROCEDIMENTO.
             switch dressCategory{
-            case 0,1:
+            case 0,1,4:
                 sleeves = Model.short
             case 2:
                 sweaterType = SweaterModels.pullover
@@ -190,7 +184,6 @@ class AddClothesTableViewController: UITableViewController, UITextFieldDelegate 
     
     func addShirt(){
         _ = Shirt(color: color, material: tissue, description: descriptionText.text, elegant: elegant, model: sleeves)
-        print ("Shirt data")
         
     }
     

@@ -35,27 +35,29 @@ class DressInfoTableViewController: UITableViewController {
     @IBOutlet weak var chosenDescriptionLabel: UILabel!
     
     
+    @IBOutlet weak var modelLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        print ("DressCategory: \(dressCategory)")
         
         tableView.tableFooterView = UIView(frame: .zero)
         
         switch dressCategory{
             case 0:
             loadTshirt()
-            chosenModelLabel.text = "Short/Long sleeves:"
+            modelLabel.text = "Short/Long sleeves:"
             case 1:
             loadShirt()
-            chosenModelLabel.text = "Short/Long sleeves:"
+            modelLabel.text = "Short/Long sleeves:"
         case 2:
             loadSweater()
+            modelLabel.text = "Sweatshirt/Pullover"
         case 3:
             loadDress()
         case 4:
             loadTrousers()
+            modelLabel.text = "Short/Long"
         case 5:
             loadShoes()
         case 6:
