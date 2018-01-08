@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Outfit {
+class Outfit: Codable {
     
     let trousers: Trousers?
     let tShirt: TShirt?
@@ -19,7 +19,7 @@ class Outfit {
     let shoes: Shoes?
     let dress: Dress?
     
-    var imageAvatar: UIImage?
+    var imageAvatar: Data?
     
     init(trousers: Trousers?, tShirt: TShirt?, shirt: Shirt?, sweater: Sweater?, skirt: Skirt?, shoes: Shoes?, dress: Dress?, image: UIImage?) {
         self.trousers = trousers
@@ -30,11 +30,10 @@ class Outfit {
         self.shoes = shoes
         self.dress = dress
         
-//      Here goes the UIImage of the dressed avatar - go to Utility folder for the func definition (class extension)
-        self.imageAvatar = dressedAvatar(with: self)
+//      Here goes the JPEG of the dressed avatar - go to Utility folder for the func definition (class extension)
+        self.imageAvatar = UIImageJPEGRepresentation(dressedAvatar(with: self)!, 0.8)
         
     }
-    
     
     
 }

@@ -60,6 +60,8 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         self.weatherImageView.image = self.icons["partly-cloudy-day"]
         self.forecastLabel.text = "Humid and Mostly Cloudy" + "\n" + self.celsius.description + "°C"
         self.locationLabel.text = "Napoli"
+        
+        print("viewDidLoad")
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,22 +69,24 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         elegant = Wardrobe.shared.chooseElegant
         cold = Wardrobe.shared.chooseCold
         
+        print("viewWillAppear")
+        
         if elegant {
-            shirtImageView.image = Shirt(color: Color.white, material: Material.cotton, description: "White shirt", elegant: true, model: Model.long).image()
-            dressImageView.image = Dress(color: Color.blue, material: Material.cotton, description: "Dark dress", elegant: true).image()
-            shoesImageView.image = Shoes(color: Color.black, material: .cotton, description: "elegant shoes", elegant: true).image()
-            trousersImageView.image = Trousers(color: Color.blue, material: Material.cotton, description: "", elegant: true, model: Model.long).image()
+//            shirtImageView.image = Shirt(color: Color.white, material: Material.cotton, description: "White shirt", elegant: true, model: Model.long).image()
+//            dressImageView.image = Dress(color: Color.blue, material: Material.cotton, description: "Dark dress", elegant: true).image()
+//            shoesImageView.image = Shoes(color: Color.black, material: .cotton, description: "elegant shoes", elegant: true).image()
+//            trousersImageView.image = Trousers(color: Color.blue, material: Material.cotton, description: "", elegant: true, model: Model.long).image()
         } else if !elegant && !cold {
-            dressImageView.image = nil
-            trousersImageView.image = Trousers(color: Color.black, material: Material.cotton, description: "Black pants bought on 12/12/17", elegant: true, model: Model.long).image()
-            shirtImageView.image = Shirt(color: Color.white, material: Material.cotton, description: "White shirt", elegant: true, model: Model.long).image()
-            shoesImageView.image = Shoes(color: Color.red, material: Material.cotton, description: "Converse", elegant: false).image()
+//            dressImageView.image = nil
+//            trousersImageView.image = Trousers(color: Color.black, material: Material.cotton, description: "Black pants bought on 12/12/17", elegant: true, model: Model.long).image()
+//            shirtImageView.image = Shirt(color: Color.white, material: Material.cotton, description: "White shirt", elegant: true, model: Model.long).image()
+//            shoesImageView.image = Shoes(color: Color.red, material: Material.cotton, description: "Converse", elegant: false).image()
         }
         else if cold {
-            dressImageView.image = nil
-            shoesImageView.image = Shoes(color: Color.saddleBrown, material: Material.cotton, description: "", elegant: false).image()
-            trousersImageView.image = Trousers(color: Color.indigo, material: Material.wool, description: "", elegant: true, model: Model.long).image()
-            shirtImageView.image = Sweater(color: Color.putty, material: Material.cashmere, description: "", elegant: false, model: SweaterModels.pullover).image()
+//            dressImageView.image = nil
+//            shoesImageView.image = Shoes(color: Color.saddleBrown, material: Material.cotton, description: "", elegant: false).image()
+//            trousersImageView.image = Trousers(color: Color.indigo, material: Material.wool, description: "", elegant: true, model: Model.long).image()
+//            shirtImageView.image = Sweater(color: Color.putty, material: Material.cashmere, description: "", elegant: false, model: SweaterModels.pullover).image()
         }
         
         

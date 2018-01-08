@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
+//MARK: - Superclass declaration
+
 class Cloth: Codable {
+    //    MARK: Superclass properties
     
     let category: ClothCategory
     let color: Color
@@ -17,16 +20,6 @@ class Cloth: Codable {
     var description: String?
     var isElegant: Bool
     var lastTimeUsed: Date?
-    
-    init(color: Color, material: Material, description: String?, elegant: Bool, category: ClothCategory) {
-        self.color = color
-        self.material = material
-        self.description = description
-        self.category = category
-        isElegant = elegant
-        self.askWardrobeForMatchedClothes()
-        Wardrobe.shared.add(cloth: self)
-    }
     
     var matchedTrousers: [Trousers]?
     var matchedTShirts: [TShirt]?
@@ -36,15 +29,16 @@ class Cloth: Codable {
     var matchedShoes: [Shoes]?
     var matchedDresses: [Dress]?
     
-    func save() {
-        let jsonEncoder = JSONEncoder()
-        if let savedData = try? jsonEncoder.encode(self) {
-            let defaults = UserDefaults.standard
-            defaults.set(savedData, forKey: "cloth")
-        } else {
-            print("Failed to save data.")
-        }
-        print("Saved")
+    //MARK: Superclass methods
+    
+    init(color: Color, material: Material, description: String?, elegant: Bool, category: ClothCategory) {
+        self.color = color
+        self.material = material
+        self.description = description
+        self.category = category
+        isElegant = elegant
+        self.askWardrobeForMatchedClothes()
+        Wardrobe.shared.add(cloth: self)
     }
     
     private func askWardrobeForMatchedClothes() {
@@ -119,7 +113,7 @@ class Cloth: Codable {
     
 }
 
-
+// MARK: - Subclasses declaration
 
 class Trousers: Cloth {
     
@@ -130,14 +124,51 @@ class Trousers: Cloth {
         super.init(color: color, material: material, description: description, elegant: elegant, category: .trousers)
     }
     
+    private enum CodingKeys: CodingKey { case model }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        model = try container.decode(Model.self, forKey: .model)
+        let superDecoder = try container.superDecoder()
+        try super.init(from: superDecoder)
+    }
+    
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(model, forKey: .model)
+        
+        let superEncoder = container.superEncoder()
+        try super.encode(to: superEncoder)
+    }
+    
+    
 }
 
 class TShirt: Cloth {
     
     let sleeves: Model
+    
     init(color: Color, material: Material, description: String?, elegant: Bool, model: Model) {
         self.sleeves = model
         super.init(color: color, material: material, description: description, elegant: elegant, category: .tShirt)
+    }
+    
+    private enum CodingKeys: CodingKey { case sleeves }
+    
+    required init(from decoder: Decoder) throws {
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        sleeves = try container.decode(Model.self, forKey: .sleeves)
+        let superDecoder = try container.superDecoder()
+        try super.init(from: superDecoder)
+    }
+    
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(sleeves, forKey: .sleeves)
+        
+        let superEncoder = container.superEncoder()
+        try super.encode(to: superEncoder)
     }
     
 }
@@ -151,6 +182,23 @@ class Shirt: Cloth {
         super.init(color: color, material: material, description: description, elegant: elegant, category: .shirt)
     }
     
+    private enum CodingKeys: CodingKey { case model }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        model = try container.decode(Model.self, forKey: .model)
+        let superDecoder = try container.superDecoder()
+        try super.init(from: superDecoder)
+    }
+    
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(model, forKey: .model)
+        
+        let superEncoder = container.superEncoder()
+        try super.encode(to: superEncoder)
+    }
+    
 }
 
 class Sweater: Cloth {
@@ -160,6 +208,23 @@ class Sweater: Cloth {
     init(color: Color, material: Material, description: String?, elegant: Bool, model: SweaterModels) {
         self.model = model
         super.init(color: color, material: material, description: description, elegant: elegant, category: .sweater)
+    }
+    
+    private enum CodingKeys: CodingKey { case model }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        model = try container.decode(SweaterModels.self, forKey: .model)
+        let superDecoder = try container.superDecoder()
+        try super.init(from: superDecoder)
+    }
+    
+    override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(model, forKey: .model)
+        
+        let superEncoder = container.superEncoder()
+        try super.encode(to: superEncoder)
     }
     
 }
