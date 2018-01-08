@@ -30,7 +30,7 @@ class Outfit {
         self.shoes = shoes
         self.dress = dress
         
-//      Here goes the UIImage of the dressed avatar
+//      Here goes the UIImage of the dressed avatar - go to Utility folder for the func definition (class extension)
         self.imageAvatar = dressedAvatar(with: self)
         
     }

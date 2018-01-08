@@ -24,7 +24,7 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var dressImageView: UIImageView!
     
     let manager = CLLocationManager()
-    var celsius: Float = 0
+    var celsius: Float = 8.5
     var summary: String? = ""
     var location: String = ""
     var fahrenheit : Float?
@@ -53,6 +53,13 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         
 //        var dailyOutfit = Wardrobe.shared.getOutfit(elegant: false, cold: false)
        
+        
+        /*
+         ONLY FOR PRESENTATION
+         */
+        self.weatherImageView.image = self.icons["partly-cloudy-day"]
+        self.forecastLabel.text = "Humid and Mostly Cloudy" + "\n" + self.celsius.description + "°C"
+        self.locationLabel.text = "Napoli"
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,14 +70,16 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         if elegant {
             shirtImageView.image = Shirt(color: Color.white, material: Material.cotton, description: "White shirt", elegant: true, model: Model.long).image()
             dressImageView.image = Dress(color: Color.blue, material: Material.cotton, description: "Dark dress", elegant: true).image()
-            shoesImageView.image = Shoes(color: Color.blue, material: .cotton, description: "elegant shoes", elegant: true).image()
+            shoesImageView.image = Shoes(color: Color.black, material: .cotton, description: "elegant shoes", elegant: true).image()
             trousersImageView.image = Trousers(color: Color.blue, material: Material.cotton, description: "", elegant: true, model: Model.long).image()
-        } else {
+        } else if !elegant && !cold {
+            dressImageView.image = nil
             trousersImageView.image = Trousers(color: Color.black, material: Material.cotton, description: "Black pants bought on 12/12/17", elegant: true, model: Model.long).image()
             shirtImageView.image = Shirt(color: Color.white, material: Material.cotton, description: "White shirt", elegant: true, model: Model.long).image()
             shoesImageView.image = Shoes(color: Color.red, material: Material.cotton, description: "Converse", elegant: false).image()
         }
-        if cold {
+        else if cold {
+            dressImageView.image = nil
             shoesImageView.image = Shoes(color: Color.saddleBrown, material: Material.cotton, description: "", elegant: false).image()
             trousersImageView.image = Trousers(color: Color.indigo, material: Material.wool, description: "", elegant: true, model: Model.long).image()
             shirtImageView.image = Sweater(color: Color.putty, material: Material.cashmere, description: "", elegant: false, model: SweaterModels.pullover).image()
@@ -102,9 +111,11 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
                     for result in results{
                         print("\(result)\n\n")
                         self.fahrenheit = result.temperature
-                        self.celsius = (self.fahrenheit! - 37) / 1.8
-                        self.forecastLabel.text = result.summary + "\n" + self.celsius.description + "°C"
-                        self.weatherImageView.image = self.icons[result.icon]
+                        //self.celsius = (self.fahrenheit! - 37) / 1.8
+                        self.celsius = 8.0
+
+//                        self.forecastLabel.text = result.summary + "\n" + self.celsius.description + "°C"
+//                        self.weatherImageView.image = self.icons["partly-cloudy-day"]
                     }
                 }
             } else {

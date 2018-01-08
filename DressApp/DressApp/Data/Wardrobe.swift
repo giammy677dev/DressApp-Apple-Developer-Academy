@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Wardrobe {
+class Wardrobe: Codable {
     
     static let shared = Wardrobe()  //Wardrobe singleton used in Wardrobe section (see Storyboard)
     
     private init() {
-//        load()
+        load()
     }
     
     private var trousers: [Trousers] = []
@@ -28,6 +28,7 @@ class Wardrobe {
     public var chooseCold: Bool = false
     
     private var lastOutfits: [Outfit] = []
+    
     /*
      For future updates: a user could save an outfit in a preferred outfits array
      */
@@ -56,41 +57,42 @@ class Wardrobe {
         return lastOutfits
     }
     
-//    func save() {
-//        let jsonEncoder = JSONEncoder()
-//        if let savedData = try? jsonEncoder.encode(Wardrobe.shared) {
-//            let defaults = UserDefaults.standard
-//            defaults.set(savedData, forKey: "sharedWardrobe")
-//        } else {
-//            print("Failed to save data.")
-//        }
-//        print("Saved")
-//    }
+    private func save() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(Wardrobe.shared) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "sharedWardrobe")
+        } else {
+            print("Failed to save data.")
+        }
+        print("Saved")
+    }
     
-//    func load() {
-//
-//        let defaults = UserDefaults.standard
-//
-//        if let savedData = defaults.object(forKey: "sharedWardrobe") as? Data {
-//            let jsonDecoder = JSONDecoder()
-//
-//            do {
-//                let savedWardrobe = try jsonDecoder.decode(Wardrobe.self, from: savedData)
-//                self.trousers = savedWardrobe.trousers
-//                self.tShirts = savedWardrobe.tShirts
-//                self.shirts = savedWardrobe.shirts
-//                self.sweaters = savedWardrobe.sweaters
-//                self.skirts = savedWardrobe.skirts
-//                self.shoes = savedWardrobe.shoes
-//                self.dresses = savedWardrobe.dresses
-//                self.lastOutfits = savedWardrobe.lastOutfits
-//            } catch {
-//                print("Failed to load data.")
-//            }
-//
-//
-//        }
-//    }
+    func load() {
+
+        let defaults = UserDefaults.standard
+
+        if let savedData = defaults.object(forKey: "sharedWardrobe") as? Data {
+            let jsonDecoder = JSONDecoder()
+
+            do {
+                let savedWardrobe = try jsonDecoder.decode(Wardrobe.self, from: savedData)
+                
+                self.trousers = savedWardrobe.trousers
+                self.tShirts = savedWardrobe.tShirts
+                self.shirts = savedWardrobe.shirts
+                self.sweaters = savedWardrobe.sweaters
+                self.skirts = savedWardrobe.skirts
+                self.shoes = savedWardrobe.shoes
+                self.dresses = savedWardrobe.dresses
+                self.lastOutfits = savedWardrobe.lastOutfits
+            } catch {
+                print("Failed to load data.")
+            }
+
+
+        }
+    }
     
     func add<C: Cloth>(cloth: C) {
         /*
@@ -114,6 +116,8 @@ class Wardrobe {
                 dresses.append(cloth as! Dress)
 
         }
+        
+        self.save()
     }
     
     func match<C: Cloth>(cloth: C, category: ClothCategory) -> [Any]? {

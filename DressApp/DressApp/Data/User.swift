@@ -38,7 +38,7 @@ class User: Codable {
         load()
     }
     
-    func save() {
+    private func save() {
         let jsonEncoder = JSONEncoder()
         if let savedData = try? jsonEncoder.encode(User.shared) {
             let defaults = UserDefaults.standard
@@ -46,7 +46,7 @@ class User: Codable {
         }
     }
 
-    func load() {
+    private func load() {
 
         let defaults = UserDefaults.standard
 

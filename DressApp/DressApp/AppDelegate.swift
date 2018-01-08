@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Set notification to trigger to a fixed hour everyday
         var dateComponents = DateComponents()
-        dateComponents.hour = 07
-        dateComponents.minute = 00
+        dateComponents.hour = 10
+        dateComponents.minute = 32
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         //Set notification content

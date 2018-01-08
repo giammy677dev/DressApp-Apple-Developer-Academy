@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Cloth {
+class Cloth: Codable {
     
     let category: ClothCategory
     let color: Color
@@ -36,17 +36,17 @@ class Cloth {
     var matchedShoes: [Shoes]?
     var matchedDresses: [Dress]?
     
-//    func save() {
-//        let jsonEncoder = JSONEncoder()
-//        if let savedData = try? jsonEncoder.encode(self) {
-//            let defaults = UserDefaults.standard
-//            defaults.set(savedData, forKey: "sharedUserInfo")
-//        } else {
-//            print("Failed to save data.")
-//        }
-//        print("Saved")
-//    }
-//    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(self) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "cloth")
+        } else {
+            print("Failed to save data.")
+        }
+        print("Saved")
+    }
+    
     private func askWardrobeForMatchedClothes() {
         
         matchedTrousers = Wardrobe.shared.match(cloth: self, category: .trousers) as? [Trousers]
