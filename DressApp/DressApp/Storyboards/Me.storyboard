@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-2542" y="1755"/>
         </scene>
-        <!--Your Profile-->
+        <!--Me-->
         <scene sceneID="C0t-Oa-PLD">
             <objects>
                 <tableViewController id="kDp-dr-M3R" customClass="MeTableViewController" customModule="DressApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,7 +152,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Me" image="Me Tab Bar" id="4a3-hB-TcL"/>
-                    <navigationItem key="navigationItem" title="Your Profile" id="Z0t-c8-XzM"/>
+                    <navigationItem key="navigationItem" title="Me" id="Z0t-c8-XzM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="changeSettingsCell" destination="lbZ-aw-2VT" id="CqE-dT-Pmb"/>

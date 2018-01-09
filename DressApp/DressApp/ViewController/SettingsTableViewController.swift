@@ -40,6 +40,12 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
             appleButton.alpha = 0.3
             pearButton.alpha = 0.3
         }
+        
+        if User.shared.genre == .male {
+            genreSegmentedControl.selectedSegmentIndex = 0
+        } else {
+            genreSegmentedControl.selectedSegmentIndex = 1
+        }
     }
     
     override func didReceiveMemoryWarning() {

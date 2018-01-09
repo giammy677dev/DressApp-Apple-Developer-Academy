@@ -31,7 +31,7 @@ class Outfit: Codable {
         self.dress = dress
         
 //      Here goes the JPEG of the dressed avatar - go to Utility folder for the func definition (class extension)
-        self.imageAvatar = UIImageJPEGRepresentation(dressedAvatar(with: self)!, 0.8)
+        self.imageAvatar = (image != nil) ? UIImageJPEGRepresentation(image!, 0.8)! : nil
         
     }
     

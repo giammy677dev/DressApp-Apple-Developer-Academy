@@ -37,7 +37,7 @@ class Cloth: Codable {
         self.description = description
         self.category = category
         isElegant = elegant
-        self.askWardrobeForMatchedClothes()
+        self.askWardrobeForMatchedClothes() // Calls the wardrobe for clothes matching
         Wardrobe.shared.add(cloth: self)
     }
     

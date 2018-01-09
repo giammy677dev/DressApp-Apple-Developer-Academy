@@ -81,7 +81,7 @@ class Wardrobe: Codable {
     
     func add<C: Cloth>(cloth: C) {
         // Receives an object of a subclass of Cloth class
- 
+        
         switch cloth.category {
             
         case .trousers:
@@ -102,7 +102,7 @@ class Wardrobe: Codable {
         
         self.save()
     }
-
+    
     
     func addToLastOutfits(outfit: Outfit) {
         lastOutfits.insert(outfit, at: 0)
@@ -111,150 +111,250 @@ class Wardrobe: Codable {
         }
     }
     
-    func getOutfit(elegant: Bool, cold: Bool) -> Outfit {
+    func getOutfit(temperature: Int, elegant: Bool, cold: inout Bool) -> Outfit {
         // Future update: matching algorithm between clothes
-        if elegant {
-            let chosen = dresses.popLast()
-            return Outfit(trousers: chosen?.matchedTrousers?.popLast(), tShirt: nil, shirt: chosen?.matchedShirts?.popLast(), sweater: nil, skirt: nil, shoes: chosen?.matchedShoes?.popLast(), dress: nil, image: nil)
-        } else {
-            let chosen = tShirts.popLast()
-            return Outfit(trousers: chosen?.matchedTrousers?.popLast(), tShirt: nil, shirt: nil, sweater: chosen?.matchedSweaters?.popLast(), skirt: nil, shoes: chosen?.matchedShoes?.popLast(), dress: nil, image: nil)
+        
+        var trousers: Trousers?
+        var shirt: Shirt?
+        var tShirt: TShirt?
+        var sweater: Sweater?
+        var shoes: Shoes?
+        var dress: Dress?
+        var skirt: Skirt?
+        
+        if temperature < 12 {
+            cold = true
         }
         
-    }
-    
-    func match<C: Cloth>(cloth: C, category: ClothCategory) -> [Any]? {
-        /*
-         Every cloth added to the wardrobe should have a collection of matched clothes. To find clothes that match that cloth, a
-         switch case on the category of the clothes to find iterates over the global category array and through the match function
-         of every cloth it is possible to find out if the condition is verified. Then, an array of matched clothes is returned
-         */
-        guard cloth.category != category else {
-            return nil
+        let elegant = Wardrobe.shared.chooseElegant
+        let userGenre = User.shared.genre!
+        
+        switch elegant {
+            
+        case true:
+            do {
+                if userGenre == .female {
+                    // Random choice between skirt, trousers or dress
+                    let random = arc4random_uniform(3)
+                    switch random {
+                    case 0: //A skirt has been selected and now the function is asking for an outfit
+                        skirt = pickRandom(array: Wardrobe.shared.skirts, elegant: elegant, cold: cold)
+                        shirt = pickRandom(array: skirt?.matchedShirts, elegant: elegant, cold: cold)
+                        shoes = pickRandom(array: skirt?.matchedShoes, elegant: elegant, cold: cold) ?? pickRandom(array: (shirt?.matchedShoes)!, elegant: elegant, cold: cold)
+                    case 1: //Trousers have been selected
+                        trousers = pickRandom(array: Wardrobe.shared.trousers, elegant: elegant, cold: cold)
+                        shirt = pickRandom(array: trousers?.matchedShirts, elegant: elegant, cold: cold)
+                        shoes = pickRandom(array: trousers?.matchedShoes, elegant: elegant, cold: cold) ?? pickRandom(array: (shirt?.matchedShoes)!, elegant: elegant, cold: cold)
+                    case 2: //A dress has been selected
+                        dress = pickRandom(array: Wardrobe.shared.dresses, elegant: elegant, cold: cold)
+                        shoes = pickRandom(array: dress?.matchedShoes, elegant: elegant, cold: cold)
+                    default: break
+                    }
+                    
+                } else {
+                    // User is male
+                    dress = pickRandom(array: Wardrobe.shared.dresses, elegant: elegant, cold: cold)
+                    trousers = pickRandom(array: dress?.matchedTrousers, elegant: elegant, cold: cold)
+                    shirt = pickRandom(array: trousers?.matchedShirts, elegant: elegant, cold: cold)
+                    shoes = pickRandom(array: trousers?.matchedShoes, elegant: elegant, cold: cold) ?? pickRandom(array: (shirt?.matchedShoes)!, elegant: elegant, cold: cold) ?? pickRandom(array: dress?.matchedShoes, elegant: elegant, cold: cold)
+                }
+            }
+            
+        case false:
+            do {
+                if userGenre == .female {
+                    let random = arc4random_uniform(2)
+                    switch random {
+                    case 0: //A skirt has been selected and now the function is asking for an outfit
+                        skirt = pickRandom(array: Wardrobe.shared.skirts, elegant: elegant, cold: cold)
+                    case 1: //Trousers have been selected
+                        trousers = pickRandom(array: Wardrobe.shared.trousers, elegant: elegant, cold: cold)
+                    default: break
+                    }
+                } else {
+                    // User is male
+                    trousers = pickRandom(array: Wardrobe.shared.trousers, elegant: elegant, cold: cold)
+                }
+                
+                let random = arc4random_uniform(cold ? 3 : 2)
+                switch random { //Choosing between sweater and shirt
+                case 0: //T-Shirt
+                    tShirt = pickRandom(array: trousers?.matchedTShirts, elegant: elegant, cold: cold) ?? pickRandom(array: skirt?.matchedTShirts, elegant: elegant, cold: cold)
+                case 1: //Shirt
+                    shirt = pickRandom(array: trousers?.matchedShirts, elegant: elegant, cold: cold) ?? pickRandom(array: skirt?.matchedShirts, elegant: elegant, cold: cold)
+                case 2: //Sweater
+                    sweater = pickRandom(array: trousers?.matchedSweaters, elegant: elegant, cold: cold) ?? pickRandom(array: skirt?.matchedSweaters, elegant: elegant, cold: cold)
+                default: break
+                }
+            }
         }
-        
-        var clothesMatched: [Any]?
-        
-        switch category {
-            
-            case .dress:
-                for dress in dresses {
-                    if dress.matches(cloth) {
-                        guard let _ = clothesMatched else {
-                            clothesMatched = [Dress]()
-                            continue
-                        }
-                        clothesMatched?.append(dress)
-                    }
-                }
-            
-            case .shirt:
-                for shirt in shirts {
-                    if shirt.matches(cloth) {
-                        guard let _ = clothesMatched else {
-                            clothesMatched = [Shirt]()
-                            continue
-                        }
-                        clothesMatched?.append(shirt)
-                    }
-                }
-            
-            case .shoes:
-                for item in shoes {
-                    if item.matches(cloth) {
-                        guard let _ = clothesMatched else {
-                            clothesMatched = [Shoes]()
-                            continue
-                        }
-                        clothesMatched?.append(item)
-                    }
-                }
-            
-            case .skirt:
-                for skirt in skirts {
-                    if skirt.matches(cloth) {
-                        guard let _ = clothesMatched else {
-                            clothesMatched = [Skirt]()
-                            continue
-                        }
-                        clothesMatched?.append(skirt)
-                    }
-                }
-            
-            case .sweater:
-                for sweater in sweaters {
-                    if sweater.matches(cloth) {
-                        guard let _ = clothesMatched else {
-                            clothesMatched = [Sweater]()
-                            continue
-                        }
-                        clothesMatched?.append(sweater)
-                    }
-                }
-            
-            case .trousers:
-                for item in trousers {
-                    if item.matches(cloth) {
-                        guard let _ = clothesMatched else {
-                            clothesMatched = [Trousers]()
-                            continue
-                        }
-                        clothesMatched?.append(item)
-                    }
-                }
-            
-            case .tShirt:
-                for tShirt in tShirts {
-                    if tShirt.matches(cloth) {
-                        guard let _ = clothesMatched else {
-                            clothesMatched = [TShirt]()
-                            continue
-                        }
-                        clothesMatched?.append(tShirt)
-                    }
-                }
-        }
-        
-        return clothesMatched
-        
-    }
-    
-    
-    
-    // MARK: - Get methods
-    
-    func getLastOutfits() -> [Outfit] {
-        return lastOutfits
-    }
-    
-    func getTrousers() -> [Trousers] {
-        return trousers
-    }
-    
-    func getTShirts() -> [TShirt] {
-        return tShirts
-    }
-    
-    func getShirts() -> [Shirt] {
-        return shirts
-    }
-    
-    func getSweaters() -> [Sweater] {
-        return sweaters
-    }
-    
-    func getSkirts() -> [Skirt] {
-        return skirts
-    }
-    
-    func getShoes() -> [Shoes] {
-        return shoes
-    }
 
-    func getDresses() -> [Dress] {
-        return dresses
-    }
-    
-    // MARK: - End of Wardrobe
+    return Outfit(trousers: trousers, tShirt: tShirt, shirt: shirt, sweater: sweater, skirt: skirt, shoes: shoes, dress: dress, image: nil)
     
 }
+
+
+
+func match<C: Cloth>(cloth: C, category: ClothCategory) -> [Any]? {
+    /*
+     Every cloth added to the wardrobe should have a collection of matched clothes. To find clothes that match that cloth, a
+     switch case on the category of the clothes to find iterates over the global category array and through the match function
+     of every cloth it is possible to find out if the condition is verified. Then, an array of matched clothes is returned
+     */
+    guard cloth.category != category else {
+        return nil
+    }
+    
+    var clothesMatched: [Any]?
+    
+    switch category {
+        
+    case .dress:
+        
+        for dress in dresses {
+            if dress.matches(cloth) {
+                guard let _ = clothesMatched else {
+                    clothesMatched = [Dress]()
+                    continue
+                }
+                clothesMatched?.append(dress)
+            }
+        }
+        
+    case .shirt:
+        for shirt in shirts {
+            if shirt.matches(cloth) {
+                guard let _ = clothesMatched else {
+                    clothesMatched = [Shirt]()
+                    continue
+                }
+                clothesMatched?.append(shirt)
+            }
+        }
+        
+    case .shoes:
+        for item in shoes {
+            if item.matches(cloth) {
+                guard let _ = clothesMatched else {
+                    clothesMatched = [Shoes]()
+                    continue
+                }
+                clothesMatched?.append(item)
+            }
+        }
+        
+    case .skirt:
+        for skirt in skirts {
+            if skirt.matches(cloth) {
+                guard let _ = clothesMatched else {
+                    clothesMatched = [Skirt]()
+                    continue
+                }
+                clothesMatched?.append(skirt)
+            }
+        }
+        
+    case .sweater:
+        for sweater in sweaters {
+            if sweater.matches(cloth) {
+                guard let _ = clothesMatched else {
+                    clothesMatched = [Sweater]()
+                    continue
+                }
+                clothesMatched?.append(sweater)
+            }
+        }
+        
+    case .trousers:
+        for item in trousers {
+            if item.matches(cloth) {
+                guard let _ = clothesMatched else {
+                    clothesMatched = [Trousers]()
+                    continue
+                }
+                clothesMatched?.append(item)
+            }
+        }
+        
+    case .tShirt:
+        for tShirt in tShirts {
+            if tShirt.matches(cloth) {
+                guard let _ = clothesMatched else {
+                    clothesMatched = [TShirt]()
+                    continue
+                }
+                clothesMatched?.append(tShirt)
+            }
+        }
+    }
+    
+    return clothesMatched
+    
+}
+
+
+
+// MARK: - Get methods
+
+func getLastOutfits() -> [Outfit] {
+    return lastOutfits
+}
+
+func getTrousers() -> [Trousers] {
+    return trousers
+}
+
+func getTShirts() -> [TShirt] {
+    return tShirts
+}
+
+func getShirts() -> [Shirt] {
+    return shirts
+}
+
+func getSweaters() -> [Sweater] {
+    return sweaters
+}
+
+func getSkirts() -> [Skirt] {
+    return skirts
+}
+
+func getShoes() -> [Shoes] {
+    return shoes
+}
+
+func getDresses() -> [Dress] {
+    return dresses
+}
+
+// MARK: Used for matching
+func pickRandom<C: Cloth>(array: [C]?, elegant: Bool, cold: Bool) -> C? {
+    // From an array of clothes, it returns an available random cloth that respect the booleans elegant and cold
+    
+    let hotMaterials: [Material] = [.cotton, .synthetic, .jeans]
+    var toReturn: C?
+    
+    guard let _ = array else {return nil}
+    
+    while toReturn == nil {
+        let cloth = array![Int(arc4random_uniform(UInt32(array!.count)))]
+        if !cold {
+            if hotMaterials.contains(cloth.material) && cloth.isElegant == elegant {
+                toReturn = cloth
+            }
+        } else {
+            if cloth.isElegant == elegant {
+                toReturn = cloth
+            }
+        }
+    }
+    
+    return toReturn!
+}
+
+
+// MARK: - End of Wardrobe
+
+}
+

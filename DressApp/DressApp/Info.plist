@@ -47,7 +47,7 @@
 		<string>MKDirectionsModeTrain</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>The app need your gps info </string>
+	<string>The app needs your gps info </string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -64,8 +64,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>
