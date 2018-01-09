@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Epu-lz-wHC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Epu-lz-wHC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -94,11 +94,19 @@
                                 <rect key="frame" x="152" y="558" width="60" height="30"/>
                                 <state key="normal" title="Filters"/>
                                 <connections>
-                                    <segue destination="jv2-9D-1Jo" kind="show" id="Jky-Ig-TRG"/>
+                                    <action selector="liftTheFiltersCard:" destination="VqL-Ks-9mt" eventType="touchUpInside" id="Prl-gj-N08"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHm-gd-3a9">
+                                <rect key="frame" x="0.0" y="626" width="375" height="352"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="jv2-9D-1Jo" kind="embed" identifier="CardSegue" id="gkj-0j-JH7"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UXJ-UX-hmp" firstAttribute="leading" secondItem="kD1-Lz-Alk" secondAttribute="leading" constant="141" id="0IG-tK-KFA"/>
                             <constraint firstItem="kD1-Lz-Alk" firstAttribute="trailing" secondItem="bn8-yq-S3u" secondAttribute="trailing" constant="139" id="3Py-F3-jwL"/>
@@ -137,6 +145,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="avatarImageView" destination="dIW-zy-LUz" id="RS0-6w-rzo"/>
+                        <outlet property="cardView" destination="tHm-gd-3a9" id="K6W-nb-nMW"/>
                         <outlet property="dressImageView" destination="Vsn-Hg-m9S" id="pN0-hE-nRT"/>
                         <outlet property="forecastLabel" destination="wgO-bv-Uup" id="LQQ-Ei-dvD"/>
                         <outlet property="locationLabel" destination="Rhr-re-7Ru" id="OAz-Zs-Nmm"/>
@@ -149,14 +158,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN6-EL-O1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.399999999999999" y="-367.46626686656674"/>
+            <point key="canvasLocation" x="-322.39999999999998" y="-367.46626686656674"/>
         </scene>
         <!--Filters Table View Controller-->
         <scene sceneID="lxs-l5-7Va">
             <objects>
                 <tableViewController id="jv2-9D-1Jo" customClass="FiltersTableViewController" customModule="DressApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EIV-Ry-9kh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EIV-Ry-9kh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="352"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -232,7 +241,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvn-KM-iKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199.2" y="-367.46626686656674"/>
+            <point key="canvasLocation" x="478" y="-367"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BMS-7g-3Vl">

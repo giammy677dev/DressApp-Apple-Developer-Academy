@@ -22,7 +22,10 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var tShirtImageView: UIImageView!
     @IBOutlet weak var shoesImageView: UIImageView!
     @IBOutlet weak var dressImageView: UIImageView!
+    @IBOutlet public weak var cardView: UIView!
     
+    var cardClosed: Bool = true
+    let overlay = UIVisualEffectView() //constant for the blur effect of the card
     let manager = CLLocationManager()
     var celsius: Float = 8.5
     var summary: String? = ""
@@ -50,6 +53,14 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        
+        
+//    cardView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        cardView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        overlay.frame = self.view.frame
+        view.insertSubview(overlay, at: 0)
         
 //        var dailyOutfit = Wardrobe.shared.getOutfit(elegant: false, cold: false)
        
@@ -145,7 +156,20 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    
+    @IBAction func liftTheFiltersCard(_ sender: UIButton) {
+        if self.cardClosed == true {
+            self.cardClosed = false
+            overlay.effect = UIBlurEffect(style: .dark)
+            UIView.animate(withDuration: 0.3){ self.cardView.transform = CGAffineTransform(translationX: 0, y: -320)}
+        }
+        else{
+            self.cardClosed = true
+            overlay.effect = nil
+            UIView.animate(withDuration: 0.3){
+                self.cardView.transform = CGAffineTransform(translationX: 0, y: 0)
+            }
+        }
+    }
     
     
 
@@ -153,10 +177,6 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-        
-        
-        
-   
     
 
     /*

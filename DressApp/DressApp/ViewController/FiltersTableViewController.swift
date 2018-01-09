@@ -17,29 +17,34 @@ class FiltersTableViewController: UITableViewController {
         super.viewDidLoad()
         elegantSwitch.isOn = Wardrobe.shared.chooseElegant
         coldSwitch.isOn = Wardrobe.shared.chooseCold
+        
+        let myCustomViewController: TodayViewController = TodayViewController(nibName: nil, bundle: nil)
+        let getThatValue = myCustomViewController.cardView
+        
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(myviewTapped(sender:)))
+        swipeGesture.direction = .down
+        getThatValue?.addGestureRecognizer(swipeGesture)
+        getThatValue?.isUserInteractionEnabled = true
     }
     @IBAction func cold(_ sender: Any) {
         Wardrobe.shared.chooseCold = !Wardrobe.shared.chooseCold
     }
     
+
     @IBAction func elegant(_ sender: Any) {
         Wardrobe.shared.chooseElegant = !Wardrobe.shared.chooseElegant
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 2
     }
     
@@ -47,5 +52,14 @@ class FiltersTableViewController: UITableViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.tableFooterView = UIView(frame: .zero)
+    }
+    
+    @objc func myviewTapped(sender: UITapGestureRecognizer) {
+        print ("tap registrata")
+        self.dismiss(animated: true, completion: nil)
+        print ("tap registrata")
+    }
     
 }
