@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Today-->
+        <!--Outfit-->
         <scene sceneID="7kx-qP-t4J">
             <objects>
                 <viewController id="VqL-Ks-9mt" customClass="TodayViewController" customModule="DressApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kD1-Lz-Alk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" image="Today Tab Bar" id="YNi-Hs-JlO"/>
+                    <tabBarItem key="tabBarItem" title="Outfit" image="Today Tab Bar" id="YNi-Hs-JlO"/>
                     <navigationItem key="navigationItem" id="liG-yK-EdY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
