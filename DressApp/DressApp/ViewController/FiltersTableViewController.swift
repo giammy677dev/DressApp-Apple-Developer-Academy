@@ -17,15 +17,8 @@ class FiltersTableViewController: UITableViewController {
         super.viewDidLoad()
         elegantSwitch.isOn = Wardrobe.shared.chooseElegant
         coldSwitch.isOn = Wardrobe.shared.chooseCold
-        
-        let myCustomViewController: TodayViewController = TodayViewController(nibName: nil, bundle: nil)
-        let getThatValue = myCustomViewController.cardView
-        
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(myviewTapped(sender:)))
-        swipeGesture.direction = .down
-        getThatValue?.addGestureRecognizer(swipeGesture)
-        getThatValue?.isUserInteractionEnabled = true
     }
+    
     @IBAction func cold(_ sender: Any) {
         Wardrobe.shared.chooseCold = !Wardrobe.shared.chooseCold
     }
@@ -56,10 +49,10 @@ class FiltersTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
     }
     
-    @objc func myviewTapped(sender: UITapGestureRecognizer) {
-        print ("tap registrata")
-        self.dismiss(animated: true, completion: nil)
-        print ("tap registrata")
-    }
+//    @objc func myviewTapped(sender: UITapGestureRecognizer) {
+//        print ("tap registrata")
+//        self.dismiss(animated: true, completion: nil)
+//        print ("tap registrata")
+//    }
     
 }
