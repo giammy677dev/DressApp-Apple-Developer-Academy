@@ -111,9 +111,9 @@ class Wardrobe: Codable {
         }
     }
     
-    func getOutfit(temperature: Int, elegant: Bool, cold: inout Bool) -> Outfit {
+    func getOutfit(temperature: Int, elegant: Bool, cold: inout Bool) -> Outfit? {
         // Future update: matching algorithm between clothes
-        
+        print("In getOutfit")
         var trousers: Trousers?
         var shirt: Shirt?
         var tShirt: TShirt?
@@ -128,26 +128,35 @@ class Wardrobe: Codable {
         
         let elegant = Wardrobe.shared.chooseElegant
         let userGenre = User.shared.genre!
-        
+        print("elegant")
         switch elegant {
-            
         case true:
             do {
+                print(elegant)
                 if userGenre == .female {
                     // Random choice between skirt, trousers or dress
                     let random = arc4random_uniform(3)
+                    print(random)
                     switch random {
                     case 0: //A skirt has been selected and now the function is asking for an outfit
                         skirt = pickRandom(array: Wardrobe.shared.skirts, elegant: elegant, cold: cold)
                         shirt = pickRandom(array: skirt?.matchedShirts, elegant: elegant, cold: cold)
                         shoes = pickRandom(array: skirt?.matchedShoes, elegant: elegant, cold: cold) ?? pickRandom(array: (shirt?.matchedShoes)!, elegant: elegant, cold: cold)
+                        print(skirt)
+                        print(shirt)
+                        print(shoes)
                     case 1: //Trousers have been selected
                         trousers = pickRandom(array: Wardrobe.shared.trousers, elegant: elegant, cold: cold)
                         shirt = pickRandom(array: trousers?.matchedShirts, elegant: elegant, cold: cold)
                         shoes = pickRandom(array: trousers?.matchedShoes, elegant: elegant, cold: cold) ?? pickRandom(array: (shirt?.matchedShoes)!, elegant: elegant, cold: cold)
+                        print(trousers)
+                        print(shirt)
+                        print(shoes)
                     case 2: //A dress has been selected
                         dress = pickRandom(array: Wardrobe.shared.dresses, elegant: elegant, cold: cold)
                         shoes = pickRandom(array: dress?.matchedShoes, elegant: elegant, cold: cold)
+                        print(dress)
+                        print(shoes)
                     default: break
                     }
                     
@@ -157,11 +166,16 @@ class Wardrobe: Codable {
                     trousers = pickRandom(array: dress?.matchedTrousers, elegant: elegant, cold: cold)
                     shirt = pickRandom(array: trousers?.matchedShirts, elegant: elegant, cold: cold)
                     shoes = pickRandom(array: trousers?.matchedShoes, elegant: elegant, cold: cold) ?? pickRandom(array: (shirt?.matchedShoes)!, elegant: elegant, cold: cold) ?? pickRandom(array: dress?.matchedShoes, elegant: elegant, cold: cold)
+                    print(dress)
+                    print(trousers)
+                    print(shirt)
+                    print(shoes)
                 }
             }
             
         case false:
             do {
+                print(elegant)
                 if userGenre == .female {
                     let random = arc4random_uniform(2)
                     switch random {
@@ -171,9 +185,12 @@ class Wardrobe: Codable {
                         trousers = pickRandom(array: Wardrobe.shared.trousers, elegant: elegant, cold: cold)
                     default: break
                     }
+                    print(skirt)
+                    print(trousers)
                 } else {
                     // User is male
                     trousers = pickRandom(array: Wardrobe.shared.trousers, elegant: elegant, cold: cold)
+                    print(trousers)
                 }
                 
                 let random = arc4random_uniform(cold ? 3 : 2)
@@ -186,9 +203,25 @@ class Wardrobe: Codable {
                     sweater = pickRandom(array: trousers?.matchedSweaters, elegant: elegant, cold: cold) ?? pickRandom(array: skirt?.matchedSweaters, elegant: elegant, cold: cold)
                 default: break
                 }
+                print("last 3 clothes")
+                print(tShirt)
+                print(shirt)
+                print(sweater)
             }
         }
-
+        
+    print("finish")
+        
+    switch (trousers, skirt, dress) {
+    case (nil, nil, nil): return nil
+    default: break
+    }
+    
+    switch (shirt, tShirt, sweater) {
+    case (nil, nil, nil): return nil
+    default: break
+    }
+        
     return Outfit(trousers: trousers, tShirt: tShirt, shirt: shirt, sweater: sweater, skirt: skirt, shoes: shoes, dress: dress, image: nil)
     
 }

@@ -58,6 +58,14 @@ extension UIImage {
         UIGraphicsEndImageContext()
         self.init(cgImage: image!.cgImage!)
     }
+    
+    convenience init(layer: CAGradientLayer) {
+        UIGraphicsBeginImageContext(layer.frame.size)
+        layer.render(in:UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: image!.cgImage!)
+    }
 }
 
 
