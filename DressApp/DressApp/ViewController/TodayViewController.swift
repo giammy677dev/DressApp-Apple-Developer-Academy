@@ -23,8 +23,6 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var shoesImageView: UIImageView!
     @IBOutlet weak var dressImageView: UIImageView!
     @IBOutlet public weak var cardView: UIView!
-    
-    var cardClosed: Bool = true
     let overlay = UIVisualEffectView() //constant for the blur effect of the card
     let manager = CLLocationManager()
     var celsius: Float = 8.5
@@ -35,6 +33,7 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
     var longitude : String?
     var elegant: Bool = Wardrobe.shared.chooseElegant
     var cold: Bool = Wardrobe.shared.chooseCold
+    
     
     var icons: [String : UIImage] = ["clear-day": #imageLiteral(resourceName: "sun"), "clear-night": #imageLiteral(resourceName: "moon"), "rain": #imageLiteral(resourceName: "rain"), "snow": #imageLiteral(resourceName: "snow"), "sleet": #imageLiteral(resourceName: "rain"), "wind": #imageLiteral(resourceName: "cloudy"), "fog": #imageLiteral(resourceName: "clouds"), "cloudy": #imageLiteral(resourceName: "clouds"), "partly-cloudy-day": #imageLiteral(resourceName: "cloudy"), "partly-cloudy-night": #imageLiteral(resourceName: "cloudy moon")]
     
@@ -54,11 +53,6 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         
-        
-//    cardView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        cardView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        
         overlay.frame = self.view.frame
         view.insertSubview(overlay, at: 0)
         
@@ -72,13 +66,34 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
         self.forecastLabel.text = "Humid and Mostly Cloudy" + "\n" + self.celsius.description + "°C"
         self.locationLabel.text = "Napoli"
         
-        print("viewDidLoad")
-        }
+//        To enable the swipe gesture
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(myviewTapped(sender:)))
+        swipeGesture.direction = .down
+        cardView.addGestureRecognizer(swipeGesture)
+        cardView.isUserInteractionEnabled = true
+}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         elegant = Wardrobe.shared.chooseElegant
         cold = Wardrobe.shared.chooseCold
+        
+        if tabBarController?.selectedIndex != 0 {
+            UIView.animate(withDuration: 0){
+                self.cardView.transform = CGAffineTransform(translationX: 0, y: 0)
+            }
+            locationLabel.alpha = 1
+            forecastLabel.alpha = 1
+            weatherImageView.alpha = 1
+            avatarImageView.alpha = 1
+            trousersImageView.alpha = 1
+            shirtImageView.alpha = 1
+            tShirtImageView.alpha = 1
+            shoesImageView.alpha = 1
+            dressImageView.alpha = 1
+            
+            overlay.effect = nil
+        }
         
         print("viewWillAppear")
         
@@ -149,45 +164,48 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate {
                 }
             })
             self.locationLabel.text = self.location
-            
         }
-        
-        
-        
     }
     
     @IBAction func liftTheFiltersCard(_ sender: UIButton) {
-        if self.cardClosed == true {
-            self.cardClosed = false
-            overlay.effect = UIBlurEffect(style: .dark)
-            UIView.animate(withDuration: 0.3){ self.cardView.transform = CGAffineTransform(translationX: 0, y: -320)}
+        
+        overlay.effect = UIBlurEffect(style: .dark)
+        locationLabel.alpha = 0.3
+        forecastLabel.alpha = 0.3
+        weatherImageView.alpha = 0.3
+        avatarImageView.alpha = 0.3
+        trousersImageView.alpha = 0.3
+        shirtImageView.alpha = 0.3
+        tShirtImageView.alpha = 0.3
+        shoesImageView.alpha = 0.3
+        dressImageView.alpha = 0.3
+            UIView.animate(withDuration: 0.3){ self.cardView.transform = CGAffineTransform(translationX: 0, y: -201)}
+        
         }
-        else{
-            self.cardClosed = true
-            overlay.effect = nil
-            UIView.animate(withDuration: 0.3){
-                self.cardView.transform = CGAffineTransform(translationX: 0, y: 0)
-            }
-        }
-    }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+
+@objc func myviewTapped(sender: UITapGestureRecognizer) {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    locationLabel.alpha = 1
+    forecastLabel.alpha = 1
+    weatherImageView.alpha = 1
+    avatarImageView.alpha = 1
+    trousersImageView.alpha = 1
+    shirtImageView.alpha = 1
+    tShirtImageView.alpha = 1
+    shoesImageView.alpha = 1
+    dressImageView.alpha = 1
+    
+    overlay.effect = nil
+    
+    UIView.animate(withDuration: 0.3){
+        self.cardView.transform = CGAffineTransform(translationX: 0, y: 0)
+        print ("tap registrata")
     }
-    */
+}
 
 }
 
