@@ -20,11 +20,15 @@ class FiltersTableViewController: UITableViewController {
     }
     
     @IBAction func cold(_ sender: Any) {
+        elegantSwitch.isOn = false
+        Wardrobe.shared.chooseElegant = false
         Wardrobe.shared.chooseCold = !Wardrobe.shared.chooseCold
     }
     
 
     @IBAction func elegant(_ sender: Any) {
+        coldSwitch.isOn = false
+        Wardrobe.shared.chooseCold = false
         Wardrobe.shared.chooseElegant = !Wardrobe.shared.chooseElegant
     }
     
@@ -54,5 +58,17 @@ class FiltersTableViewController: UITableViewController {
 //        self.dismiss(animated: true, completion: nil)
 //        print ("tap registrata")
 //    }
-    
+    @IBAction func elegantButton(_ sender: UISwitch) {
+        
+        
+    }
+    @IBAction func coldButton(_ sender: UISwitch) {
+        if coldSwitch.isOn == true {
+            
+            elegantSwitch.isOn = false
+        }
+    }
 }
+
+
+
